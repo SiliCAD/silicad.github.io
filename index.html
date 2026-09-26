@@ -3,16 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SiliCAD — Spec to Silicon</title>
+<meta name="description" content="SiliCAD — AI agents that take analog circuits from spec to a DRC-clean layout on real EDA tools. By Vaibhav Singh."><meta name="theme-color" content="#08040A"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><meta property="og:type" content="website"><meta property="og:site_name" content="SiliCAD"><meta property="og:title" content="SiliCAD — Spec to Silicon"><meta property="og:description" content="AI agents for analog chip design, directed by the engineer. Vaibhav Singh."><meta property="og:url" content="https://vs34.github.io/"><meta property="og:image" content="https://vs34.github.io/assets/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="SiliCAD — Spec to Silicon"><meta name="twitter:description" content="AI agents for analog chip design, directed by the engineer."><meta name="twitter:image" content="https://vs34.github.io/assets/og-image.png">
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
-<helmet><title>SiliCAD — Spec to Silicon</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#1C0F18;color:#f1e7e2;-webkit-font-smoothing:antialiased}a{color:#f1e7e2;text-decoration:none}a:hover{color:rgb(192 150 95)}::selection{background:rgb(192 150 95);color:#1C0F18}</style></helmet>
-<div style="font-family:'IBM Plex Sans',sans-serif;background:#1C0F18;color:#f1e7e2;min-height:100vh">
-<div ref="{{ spot }}" style="position:fixed;inset:0;z-index:40;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(560px circle at var(--mx,70%) var(--my,40%),rgba(43,74,134,.2),rgba(99,17,25,.12) 45%,transparent 70%)"></div>
-<div style="position:fixed;inset:0;z-index:45;pointer-events:none;opacity:.08;mix-blend-mode:overlay;background-image:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27160%27%20height%3D%27160%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.85%27%20numOctaves%3D%272%27%20stitchTiles%3D%27stitch%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%23n%29%27%2F%3E%3C%2Fsvg%3E')"></div>
+<helmet><title>SiliCAD — Spec to Silicon</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#08040A;color:#f1e7e2;-webkit-font-smoothing:antialiased}a{color:#f1e7e2;text-decoration:none}a:hover{color:rgb(192 150 95)}::selection{background:rgb(192 150 95);color:#08040A}</style></helmet>
+<div style="font-family:'IBM Plex Sans',sans-serif;background:#08040A;color:#f1e7e2;min-height:100vh">
+<div ref="{{ spot }}" style="position:fixed;inset:0;z-index:40;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(560px circle at var(--mx,70%) var(--my,40%),rgba(43,74,134,.14),rgba(99,17,25,.08) 45%,transparent 70%)"></div>
+<div style="position:fixed;inset:0;z-index:45;pointer-events:none;opacity:.045;mix-blend-mode:overlay;background-image:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27160%27%20height%3D%27160%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.85%27%20numOctaves%3D%272%27%20stitchTiles%3D%27stitch%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%23n%29%27%2F%3E%3C%2Fsvg%3E')"></div>
 <sc-if value="{{ showIntro }}">
-<div ref="{{ intro }}" style="position:fixed;inset:0;z-index:100;background:#1C0F18;display:flex;flex-direction:column;gap:40px;align-items:center;justify-content:center;perspective:900px;pointer-events:none">
+<div ref="{{ intro }}" style="position:fixed;inset:0;z-index:100;background:#08040A;display:flex;flex-direction:column;gap:40px;align-items:center;justify-content:center;perspective:900px;pointer-events:none">
 <div data-iw style="position:relative;width:150px;height:150px;transform-style:preserve-3d">
 <img data-il src="assets/silicad-logo.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain">
 <img data-il src="assets/silicad-logo.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0">
@@ -22,15 +24,16 @@
 </div>
 </sc-if>
 
-<div style="position:fixed;top:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:14px clamp(20px,4vw,48px);background:rgba(28,15,24,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #2e1c29">
-<div onClick="{{ goVision }}" style="justify-self:start;display:flex;align-items:center;gap:10px;font:500 15px 'IBM Plex Mono',monospace;letter-spacing:.02em;cursor:pointer"><img src="assets/silicad-logo.png" alt="SiliCAD" style="width:30px;height:30px;object-fit:contain;display:block"><sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><span>SiliCAD</span></sc-if></div>
-<div style="display:flex;gap:4px;padding:4px;border:1px solid #37222f;border-radius:999px;font:500 clamp(12px,3.2vw,13px) 'IBM Plex Mono',monospace">
+<div style="position:fixed;top:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:{{ navCols }};align-items:center;gap:{{ navGap }};padding:14px clamp(14px,4vw,48px);background:rgba(8,4,10,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #231520">
+<div onClick="{{ goVision }}" style="justify-self:start;display:flex;align-items:center;gap:10px;white-space:nowrap;font:500 clamp(13px,3.8vw,15px) 'IBM Plex Mono',monospace;letter-spacing:.02em;cursor:pointer"><img src="assets/silicad-logo.png" alt="SiliCAD" style="width:30px;height:30px;object-fit:contain;display:block"><sc-if value="{{ showName }}" hint-placeholder-val="{{ true }}"><span>SiliCAD</span></sc-if></div>
+<div style="position:relative;justify-self:{{ tabsJust }};display:flex;gap:4px;padding:4px;border:1px solid #37222f;border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,240,230,.07);font:500 clamp(12px,3.2vw,13px) 'IBM Plex Mono',monospace">
+<div ref="{{ navPill }}" style="position:absolute;top:4px;bottom:4px;left:4px;width:0;border-radius:999px;background:rgba(241,231,226,.09);box-shadow:inset 0 0 0 1px rgba(241,231,226,.14),0 0 18px rgb(192 150 95 / .18);transition:left .55s cubic-bezier(.34,1.35,.5,1),width .55s cubic-bezier(.34,1.35,.5,1);pointer-events:none"></div>
 <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="3">
 <sc-if value="{{ tb.on }}">
-<div onClick="{{ tb.go }}" style="padding:8px clamp(10px,2.6vw,16px);border-radius:999px;background:rgba(241,231,226,.09);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(241,231,226,.14),0 0 18px rgb(192 150 95 / .18);color:#f1e7e2;cursor:pointer;white-space:nowrap">{{ tb.text }}</div>
+<div onClick="{{ tb.go }}" style="position:relative;z-index:1;padding:8px clamp(8px,2.6vw,16px);border-radius:999px;color:#f1e7e2;cursor:pointer;white-space:nowrap" data-tabon="1">{{ tb.text }}</div>
 </sc-if>
 <sc-if value="{{ tb.off }}">
-<div onClick="{{ tb.go }}" style="padding:8px clamp(10px,2.6vw,16px);border-radius:999px;color:#ab98a0;cursor:pointer;white-space:nowrap" style-hover="color:#f1e7e2">{{ tb.text }}</div>
+<div onClick="{{ tb.go }}" style="position:relative;z-index:1;padding:8px clamp(8px,2.6vw,16px);border-radius:999px;color:#ab98a0;cursor:pointer;white-space:nowrap;transition:color .2s ease,transform .5s cubic-bezier(.34,1.9,.5,1)" style-hover="color:#f1e7e2;transform:translateY(1px) scale(.96)" style-active="transform:translateY(3px) scale(.93);transition:transform .08s ease">{{ tb.text }}</div>
 </sc-if>
 </sc-for>
 </div>
@@ -40,16 +43,16 @@
 <sc-if value="{{ isVision }}" hint-placeholder-val="{{ true }}">
 <div data-screen-label="01 Vision">
 
-<div ref="{{ heroSec }}" style="position:relative;height:280vh">
+<div ref="{{ heroSec }}" style="position:relative;height:170vh">
 <div style="position:sticky;top:0;height:100vh;display:flex;flex-direction:{{ heroDir }};justify-content:{{ heroJustify }};align-items:{{ heroAlign }};gap:{{ heroGap }};overflow:hidden;padding:80px clamp(20px,4vw,48px) 0;box-sizing:border-box">
 <div style="width:{{ heroTextW }};min-width:0;display:{{ heroTextDisp }};flex-direction:column;gap:min(24px,2.4vh);position:relative;z-index:2">
 <div style="order:-2;font:400 12px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:rgb(192 150 95)">SiliCAD · AI agents for analog chip design</div>
-<h1 ref="{{ h1 }}" style="order:-2;margin:0;font:300 clamp(44px,min(8.4vw,13vh),124px)/0.92 'IBM Plex Sans',sans-serif;letter-spacing:-.04em">Spec to<br>Silicon.</h1>
+<h1 ref="{{ h1 }}" style="order:-2;margin:0;font:300 clamp(44px,min(8.4vw,13vh),124px)/0.92 'IBM Plex Sans',sans-serif;letter-spacing:-.04em;text-shadow:0 0 24px rgba(241,231,226,.16),0 0 64px rgba(192,150,95,.14)">Spec to<br>Silicon.</h1>
 <div style="font:400 clamp(19px,1.8vw,24px)/1.4 'IBM Plex Sans',sans-serif;color:#dccdcc">Powered by AI, directed by you.</div>
 <sc-if value="{{ showHeroP }}" hint-placeholder-val="{{ true }}"><p style="margin:0;max-width:{{ heroPMax }};min-height:{{ heroPMin }};font:400 15px/1.6 'IBM Plex Sans',sans-serif;color:#ab98a0;text-wrap:pretty">{{ heroP }}</p></sc-if>
 <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:4px">
-<div onClick="{{ goDemos }}" style="white-space:nowrap;padding:13px 18px;transition:filter .2s ease,border-color .2s ease;background:linear-gradient(135deg,#C0965F,#C05C1F);color:#1C0F18;font:500 14px 'IBM Plex Mono',monospace;cursor:pointer" style-hover="background:#f1e7e2">Watch the demos →</div>
-<div onClick="{{ toArch }}" style="white-space:nowrap;padding:13px 18px;transition:filter .2s ease,border-color .2s ease;border:1px solid #46293c;font:500 14px 'IBM Plex Mono',monospace;cursor:pointer" style-hover="border-color:#f1e7e2">Read the architecture</div>
+<div onClick="{{ goDemos }}" style="white-space:nowrap;padding:13px 20px;border-radius:999px;transition:filter .2s ease,border-color .2s ease,box-shadow .3s ease,transform .5s cubic-bezier(.34,1.9,.5,1);background:linear-gradient(135deg,#C0965F,#C05C1F);box-shadow:inset 0 1px 0 rgba(255,245,225,.45),0 10px 28px -14px rgba(192,150,95,.65);color:#08040A;font:500 14px 'IBM Plex Mono',monospace;cursor:pointer" style-hover="background:#f1e7e2;transform:translateY(2px) scale(.965);box-shadow:inset 0 1px 0 rgba(255,245,225,.3),0 3px 10px -6px rgba(192,150,95,.5)" style-active="transform:translateY(3px) scale(.93);transition:transform .08s ease">Watch the demos →</div>
+<div onClick="{{ toArch }}" style="white-space:nowrap;padding:13px 20px;border-radius:999px;transition:filter .2s ease,border-color .2s ease,box-shadow .3s ease,transform .5s cubic-bezier(.34,1.9,.5,1);border:1px solid #46293c;box-shadow:inset 0 1px 0 rgba(255,240,230,.07);font:500 14px 'IBM Plex Mono',monospace;cursor:pointer" style-hover="border-color:#f1e7e2;transform:translateY(2px) scale(.965)" style-active="transform:translateY(3px) scale(.93);transition:transform .08s ease">Read the architecture</div>
 </div>
 <sc-if value="{{ showHeroP }}" hint-placeholder-val="{{ true }}"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px;font:400 12px 'IBM Plex Mono',monospace;color:#8f7a85">
 <span>Reading as</span>
@@ -101,13 +104,13 @@
 
 <div style="position:relative;height:24px;max-width:1360px;margin:0 auto">
 <div style="position:absolute;left:clamp(20px,4vw,48px);right:clamp(20px,4vw,48px);top:11px;height:2px;background:linear-gradient(90deg,transparent,#37222f 12%,#37222f 88%,transparent)"></div>
-<div style="position:absolute;left:22%;top:7px;width:10px;height:10px;box-sizing:border-box;border:1px solid #57384c;background:#1C0F18"></div>
-<div style="position:absolute;left:78%;top:7px;width:10px;height:10px;box-sizing:border-box;border:1px solid #57384c;background:#1C0F18"></div>
+<div style="position:absolute;left:22%;top:7px;width:10px;height:10px;border-radius:50%;box-sizing:border-box;border:1px solid #57384c;background:#08040A"></div>
+<div style="position:absolute;left:78%;top:7px;width:10px;height:10px;border-radius:50%;box-sizing:border-box;border:1px solid #57384c;background:#08040A"></div>
 </div>
 <div style="padding:110px clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:56px 48px;max-width:1360px;margin:0 auto">
 <div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);grid-column:1/-1;display:flex;flex-direction:column;gap:22px;max-width:920px">
 <div style="font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#ab98a0">Vision</div>
-<div style="font:300 clamp(30px,3.4vw,46px)/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;text-wrap:pretty">Analog chips are still designed by hand, one transistor at a time. SiliCAD gives an AI agent the same tools an analog engineer uses — and the playbook of how good ones work. <span style="color:rgb(192 150 95)">The agent does the work; the engineer makes the calls.</span></div>
+<div style="font:300 clamp(30px,3.4vw,46px)/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;text-shadow:0 0 24px rgba(241,231,226,.16),0 0 64px rgba(192,150,95,.14);text-wrap:pretty">Analog chips are still designed by hand, one transistor at a time. SiliCAD gives an AI agent the same tools an analog engineer uses — and the playbook of how good ones work. <span style="color:rgb(192 150 95)">The agent does the work; the engineer makes the calls.</span></div>
 </div>
 <sc-for list="{{ principles }}" as="pr" hint-placeholder-count="3">
 <div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:{{ pr.delay }};display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:1px solid #46293c">
@@ -116,28 +119,28 @@
 <div style="font:400 15px/1.65 'IBM Plex Sans',sans-serif;color:#ab98a0;text-wrap:pretty">{{ pr.body }}</div>
 </div>
 </sc-for>
-<div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);grid-column:1/-1;position:relative;padding:30px 30px 32px;border:1px solid rgba(192,150,95,.35);background:linear-gradient(120deg,rgba(24,40,74,.7),rgba(99,17,25,.45) 60%,rgba(28,15,24,.3));display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px 36px">
+<div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);grid-column:1/-1;position:relative;padding:30px 30px 32px;border-radius:22px;border:1px solid rgba(192,150,95,.35);box-shadow:inset 0 1px 0 rgba(255,235,210,.12);background:linear-gradient(120deg,rgba(24,40,74,.7),rgba(99,17,25,.45) 60%,rgba(8,4,10,.3));display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px 36px">
 <div style="display:flex;flex-direction:column;gap:8px">
 <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:rgb(192 150 95)">If you're a {{ audLabel }}</div>
 <div style="font:400 22px/1.3 'IBM Plex Sans',sans-serif;text-wrap:pretty">{{ audHead }}</div>
 </div>
 <sc-for list="{{ audPoints }}" as="ap" hint-placeholder-count="3">
-<div style="display:flex;gap:12px;font:400 15px/1.6 'IBM Plex Sans',sans-serif;color:#dccdcc;text-wrap:pretty"><div style="flex:none;width:7px;height:7px;margin-top:9px;background:rgb(192 150 95)"></div><div>{{ ap }}</div></div>
+<div style="display:flex;gap:12px;font:400 15px/1.6 'IBM Plex Sans',sans-serif;color:#dccdcc;text-wrap:pretty"><div style="flex:none;width:7px;height:7px;margin-top:9px;border-radius:50%;background:rgb(192 150 95)"></div><div>{{ ap }}</div></div>
 </sc-for>
 </div>
 </div>
 <div style="position:relative;height:24px;max-width:1360px;margin:0 auto">
 <div style="position:absolute;left:clamp(20px,4vw,48px);right:clamp(20px,4vw,48px);top:11px;height:2px;background:linear-gradient(90deg,transparent,#37222f 12%,#37222f 88%,transparent)"></div>
-<div style="position:absolute;left:22%;top:7px;width:10px;height:10px;box-sizing:border-box;border:1px solid #57384c;background:#1C0F18"></div>
-<div style="position:absolute;left:78%;top:7px;width:10px;height:10px;box-sizing:border-box;border:1px solid #57384c;background:#1C0F18"></div>
+<div style="position:absolute;left:22%;top:7px;width:10px;height:10px;border-radius:50%;box-sizing:border-box;border:1px solid #57384c;background:#08040A"></div>
+<div style="position:absolute;left:78%;top:7px;width:10px;height:10px;border-radius:50%;box-sizing:border-box;border:1px solid #57384c;background:#08040A"></div>
 </div>
 <div ref="{{ termSec }}" style="padding:100px clamp(20px,4vw,48px) 110px;max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:48px;align-items:center">
 <div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;gap:16px;max-width:460px">
 <div style="font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#ab98a0">Inside a run</div>
-<div style="font:300 clamp(32px,3.6vw,50px)/1.05 'IBM Plex Sans',sans-serif;letter-spacing:-.03em">What the agent actually does.</div>
+<div style="font:300 clamp(32px,3.6vw,50px)/1.05 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;text-shadow:0 0 24px rgba(241,231,226,.16),0 0 64px rgba(192,150,95,.14)">What the agent actually does.</div>
 <div style="font:400 15px/1.65 'IBM Plex Sans',sans-serif;color:#ab98a0;text-wrap:pretty">An illustrative session: the tool calls it makes into Virtuoso and Eldo, the checks it runs on every result, and the moment it stops to ask you.</div>
 </div>
-<div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);min-width:0;border:1px solid #37222f;background:linear-gradient(180deg,#241520,#1f1119);box-shadow:0 40px 100px -40px rgba(99,17,25,.8),-30px 0 80px -50px rgba(24,40,74,.9)">
+<div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);min-width:0;border-radius:18px;overflow:hidden;border:1px solid #37222f;background:linear-gradient(180deg,#150b13,#0e070c);box-shadow:inset 0 1px 0 rgba(255,240,230,.07),0 40px 100px -40px rgba(99,17,25,.8),-30px 0 80px -50px rgba(24,40,74,.9)">
 <div style="display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #37222f;font:400 11px 'IBM Plex Mono',monospace;color:#8f7a85"><span>agent@silicad — ota2</span><span style="color:rgb(192 150 95)">● live</span></div>
 <div style="padding:18px 18px 22px;min-height:290px;display:flex;flex-direction:column;gap:4px;font:400 13px/1.6 'IBM Plex Mono',monospace">
 <sc-for list="{{ termLines }}" as="ln" hint-placeholder-count="9">
@@ -149,21 +152,21 @@
 
 <div style="position:relative;height:24px;max-width:1360px;margin:0 auto">
 <div style="position:absolute;left:clamp(20px,4vw,48px);right:clamp(20px,4vw,48px);top:11px;height:2px;background:linear-gradient(90deg,transparent,#37222f 12%,#37222f 88%,transparent)"></div>
-<div style="position:absolute;left:22%;top:7px;width:10px;height:10px;box-sizing:border-box;border:1px solid #57384c;background:#1C0F18"></div>
-<div style="position:absolute;left:78%;top:7px;width:10px;height:10px;box-sizing:border-box;border:1px solid #57384c;background:#1C0F18"></div>
+<div style="position:absolute;left:22%;top:7px;width:10px;height:10px;border-radius:50%;box-sizing:border-box;border:1px solid #57384c;background:#08040A"></div>
+<div style="position:absolute;left:78%;top:7px;width:10px;height:10px;border-radius:50%;box-sizing:border-box;border:1px solid #57384c;background:#08040A"></div>
 </div>
 <div ref="{{ archSec }}" style="padding:100px clamp(20px,4vw,48px) 120px;max-width:1360px;margin:0 auto;display:flex;flex-direction:column;gap:44px">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
 <div style="display:flex;flex-direction:column;gap:16px">
 <div style="font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#ab98a0">Architecture</div>
-<div style="font:300 clamp(34px,4vw,56px)/1.05 'IBM Plex Sans',sans-serif;letter-spacing:-.03em">Four layers, one request.</div>
+<div style="font:300 clamp(34px,4vw,56px)/1.05 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;text-shadow:0 0 24px rgba(241,231,226,.16),0 0 64px rgba(192,150,95,.14)">Four layers, one request.</div>
 </div>
 <div style="max-width:420px;font:400 15px/1.6 'IBM Plex Sans',sans-serif;color:#ab98a0;text-wrap:pretty">A tool call travels from the agent down to Virtuoso, Eldo or Calibre on a remote EDA server, and the result comes back up. Each layer is its own repository.</div>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px;align-items:stretch">
 <div style="grid-column:{{ archSpan }};min-width:0;display:flex;flex-direction:column">
 <sc-for list="{{ layers }}" as="ly" hint-placeholder-count="4">
-<div data-layer style="display:grid;grid-template-columns:{{ layerCols }};gap:clamp(12px,4vw,24px);padding:clamp(20px,5vw,26px) clamp(16px,5vw,24px);border:1px solid #37222f;background:#241520;transition:border-color .35s,background .35s,box-shadow .35s">
+<div data-layer style="display:grid;grid-template-columns:{{ layerCols }};gap:clamp(12px,4vw,24px);padding:clamp(20px,5vw,26px) clamp(16px,5vw,24px);border:1px solid #37222f;border-radius:16px;background:#150b13;box-shadow:inset 0 1px 0 rgba(255,240,230,.07);transition:border-color .35s,background .35s,box-shadow .35s">
 <div style="display:flex;flex-direction:column;gap:6px">
 <div style="font:500 11px 'IBM Plex Mono',monospace;color:rgb(192 150 95)">{{ ly.n }}</div>
 <div style="font:500 20px 'IBM Plex Mono',monospace">{{ ly.name }}</div>
@@ -175,11 +178,11 @@
 </div>
 </div>
 <sc-if value="{{ ly.link }}">
-<div style="display:flex;align-items:center;gap:12px;padding:10px 24px;font:400 11px 'IBM Plex Mono',monospace;color:#ab98a0"><div style="position:relative;width:1px;height:22px;background:#57384c"><div data-pulse style="position:absolute;left:-3px;top:0;width:7px;height:7px;opacity:0;background:rgb(192 150 95);box-shadow:0 0 12px rgb(192 150 95)"></div></div>↕ {{ ly.link }}</div>
+<div style="display:flex;align-items:center;gap:12px;padding:10px 24px;font:400 11px 'IBM Plex Mono',monospace;color:#ab98a0"><div style="position:relative;width:1px;height:22px;background:#57384c"><div data-pulse style="position:absolute;left:-3px;top:0;width:7px;height:7px;border-radius:50%;opacity:0;background:rgb(192 150 95);box-shadow:0 0 12px rgb(192 150 95)"></div></div>↕ {{ ly.link }}</div>
 </sc-if>
 </sc-for>
 </div>
-<div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);min-width:0;border:1px solid rgba(192,150,95,.45);background:linear-gradient(160deg,rgba(24,40,74,.85) 0%,rgba(99,17,25,.55) 55%,rgba(28,15,24,.2) 100%);box-shadow:0 40px 90px -40px rgba(99,17,25,.8);padding:28px 26px;display:flex;flex-direction:column;gap:18px">
+<div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);min-width:0;border-radius:22px;border:1px solid rgba(192,150,95,.45);background:linear-gradient(160deg,rgba(24,40,74,.85) 0%,rgba(99,17,25,.55) 55%,rgba(8,4,10,.2) 100%);box-shadow:inset 0 1px 0 rgba(255,235,210,.12),0 40px 90px -40px rgba(99,17,25,.8);padding:28px 26px;display:flex;flex-direction:column;gap:18px">
 <div style="font:500 11px 'IBM Plex Mono',monospace;color:rgb(192 150 95)">KNOWLEDGE · feeds every layer</div>
 <div style="font:500 22px 'IBM Plex Mono',monospace">AnalogMind</div>
 <div style="font:400 15px/1.6 'IBM Plex Sans',sans-serif;color:#dccdcc;text-wrap:pretty">An operating mind map the agent reads before every task: how to size from specs, which devices must match, how to lay out, route and pass DRC — plus a plug-in PDK profile for ST cmos065.</div>
@@ -194,124 +197,209 @@
 
 <div style="position:relative;height:24px;max-width:1360px;margin:0 auto">
 <div style="position:absolute;left:clamp(20px,4vw,48px);right:clamp(20px,4vw,48px);top:11px;height:2px;background:linear-gradient(90deg,transparent,#37222f 12%,#37222f 88%,transparent)"></div>
-<div style="position:absolute;left:22%;top:7px;width:10px;height:10px;box-sizing:border-box;border:1px solid #57384c;background:#1C0F18"></div>
-<div style="position:absolute;left:78%;top:7px;width:10px;height:10px;box-sizing:border-box;border:1px solid #57384c;background:#1C0F18"></div>
+<div style="position:absolute;left:22%;top:7px;width:10px;height:10px;border-radius:50%;box-sizing:border-box;border:1px solid #57384c;background:#08040A"></div>
+<div style="position:absolute;left:78%;top:7px;width:10px;height:10px;border-radius:50%;box-sizing:border-box;border:1px solid #57384c;background:#08040A"></div>
 </div>
 <div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);padding:90px clamp(20px,4vw,48px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;max-width:1360px;margin:0 auto">
-<div style="font:300 clamp(28px,3vw,42px)/1.15 'IBM Plex Sans',sans-serif;letter-spacing:-.02em">See one circuit go from spec to sign-off.</div>
-<div onClick="{{ goDemos }}" style="transition:filter .2s ease,border-color .2s ease;padding:16px 26px;background:linear-gradient(135deg,#C0965F,#C05C1F);color:#1C0F18;font:500 14px 'IBM Plex Mono',monospace;cursor:pointer" style-hover="background:#f1e7e2">02 Demos →</div>
+<div style="font:300 clamp(28px,3vw,42px)/1.15 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;text-shadow:0 0 24px rgba(241,231,226,.16),0 0 64px rgba(192,150,95,.14)">See one circuit go from spec to sign-off.</div>
+<div onClick="{{ goDemos }}" style="transition:filter .2s ease,border-color .2s ease,box-shadow .3s ease,transform .5s cubic-bezier(.34,1.9,.5,1);padding:16px 26px;border-radius:999px;background:linear-gradient(135deg,#C0965F,#C05C1F);box-shadow:inset 0 1px 0 rgba(255,245,225,.45),0 10px 28px -14px rgba(192,150,95,.65);color:#08040A;font:500 14px 'IBM Plex Mono',monospace;cursor:pointer" style-hover="background:#f1e7e2;transform:translateY(2px) scale(.965);box-shadow:inset 0 1px 0 rgba(255,245,225,.3),0 3px 10px -6px rgba(192,150,95,.5)" style-active="transform:translateY(3px) scale(.93);transition:transform .08s ease">02 Demos →</div>
 </div>
 </div>
 </sc-if>
 
 <sc-if value="{{ isDemos }}">
-<div data-screen-label="02 Demos" style="padding:130px clamp(20px,4vw,48px) 40px;max-width:1680px;margin:0 auto;box-sizing:border-box">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;padding-bottom:56px;border-bottom:1px solid #2e1c29">
-<div style="display:flex;flex-direction:column;gap:18px;max-width:760px">
-<div style="font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#ab98a0">Demos · one agent, four runs</div>
-<h2 style="margin:0;font:300 clamp(40px,5vw,72px)/1 'IBM Plex Sans',sans-serif;letter-spacing:-.04em">Watch it work.<br>Step in at every gate.</h2>
-<p style="margin:0;max-width:560px;font:400 16px/1.65 'IBM Plex Sans',sans-serif;color:#ab98a0;text-wrap:pretty">Each demo plays when you reach it. The line under the video follows the recording — click any stop to jump there. At a gate, playback pauses until you approve, just like the agent waits for the engineer.</p>
+<div data-screen-label="02 Demos" style="padding:120px clamp(20px,4vw,48px) 40px;max-width:1560px;margin:0 auto;box-sizing:border-box;display:flex;flex-direction:column;gap:clamp(24px,3.4vh,40px)">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px 48px;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:760px">
+<div style="font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#ab98a0">Demos · one flow, four runs</div>
+<h2 style="margin:0;font:300 clamp(36px,4.4vw,64px)/1.02 'IBM Plex Sans',sans-serif;letter-spacing:-.04em;text-shadow:0 0 24px rgba(241,231,226,.16),0 0 64px rgba(192,150,95,.14)">Watch it work.<br>Step in at every gate.</h2>
 </div>
-<div style="display:flex;gap:6px;flex-wrap:wrap">
+<p style="margin:0;max-width:440px;font:400 15px/1.65 'IBM Plex Sans',sans-serif;color:#ab98a0;text-wrap:pretty">Just scroll. Each run plays as it reaches the middle of the screen, the run log follows along, and at a gate the agent stops until you approve.</p>
+</div>
+<div style="position:sticky;top:70px;z-index:6;margin:0 -8px;padding:10px 8px;background:linear-gradient(#08040A 80%,rgba(8,4,10,0))">
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
 <sc-for list="{{ demos }}" as="dm" hint-placeholder-count="4">
-<div onClick="{{ dm.jump }}" style="padding:9px 14px;border:1px solid #46293c;font:500 12px 'IBM Plex Mono',monospace;color:#ab98a0;cursor:pointer;white-space:nowrap" style-hover="border-color:#f1e7e2;color:#f1e7e2">{{ dm.n }} {{ dm.short }}</div>
+<div onClick="{{ dm.pick }}" style="position:relative;cursor:pointer;padding:11px 14px 13px;border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,240,230,.07);border:1px solid {{ dm.cardBorder }};background:{{ dm.cardBg }};display:flex;justify-content:space-between;align-items:baseline;gap:10px;overflow:hidden;transition:background .35s,border-color .35s,transform .5s cubic-bezier(.34,1.9,.5,1)" style-hover="border-color:#8f7a85;transform:translateY(2px) scale(.97)" style-active="transform:translateY(3px) scale(.94);transition:transform .08s ease">
+<div style="min-width:0;display:flex;gap:10px;align-items:baseline;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font:500 11px 'IBM Plex Mono',monospace;color:{{ dm.numColor }}">{{ dm.n }}</span><span style="font:500 14px 'IBM Plex Sans',sans-serif;color:#f1e7e2">{{ dm.short }}</span></div>
+<sc-if value="{{ wide }}"><span style="font:400 11px 'IBM Plex Mono',monospace;color:#8f7a85;white-space:nowrap">{{ dm.durTxt }}</span></sc-if>
+<div style="position:absolute;left:0;right:0;bottom:0;height:2px;background:#231520"><div data-mini="{{ dm.idx }}" style="height:100%;width:0;background:linear-gradient(90deg,#2b4a86,#C0965F);box-shadow:0 0 10px rgb(192 150 95)"></div></div>
+</div>
 </sc-for>
 </div>
 </div>
-<div ref="{{ railWrap }}" style="display:flex;flex-direction:column">
+<div style="display:grid;grid-template-columns:{{ stageCols }};gap:clamp(20px,2.4vw,36px);align-items:start">
+<div ref="{{ railWrap }}" style="min-width:0;display:flex;flex-direction:column;gap:clamp(40px,7vh,72px)">
 <sc-for list="{{ demos }}" as="dm">
-<div data-chapter data-dur="{{ dm.dur }}" style="padding:88px 0 96px;border-bottom:1px solid #2e1c29;display:flex;flex-direction:column;align-items:center">
-<div style="scroll-snap-align:start;scroll-margin-top:84px;width:min(100%,1200px,max(520px,calc((100vh - 330px) * 16 / 9)));display:flex;flex-direction:column;gap:22px">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:14px 40px;flex-wrap:wrap">
-<div style="display:flex;flex-direction:column;gap:8px">
+<div data-chapter data-dur="{{ dm.dur }}" style="scroll-margin-top:140px;width:100%;max-width:max(560px,calc((100vh - 170px) * 16 / 9));align-self:center;display:flex;flex-direction:column;gap:14px;transition:opacity .5s ease,filter .5s ease">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:10px 32px;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;gap:6px">
 <div style="font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:rgb(192 150 95)">Demo {{ dm.n }} · {{ dm.tool }}</div>
-<div style="font:300 clamp(30px,3.4vw,48px)/1.05 'IBM Plex Sans',sans-serif;letter-spacing:-.03em">{{ dm.title }}</div>
+<div style="font:300 clamp(26px,2.6vw,38px)/1.1 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;text-shadow:0 0 24px rgba(241,231,226,.16),0 0 64px rgba(192,150,95,.14)">{{ dm.title }}</div>
 </div>
-<div style="max-width:440px;font:400 14px/1.6 'IBM Plex Sans',sans-serif;color:#ab98a0;text-wrap:pretty">{{ dm.summary }}</div>
+<div style="max-width:420px;font:400 14px/1.6 'IBM Plex Sans',sans-serif;color:#ab98a0;text-wrap:pretty">{{ dm.summary }}</div>
 </div>
-<div style="position:relative;width:100%;aspect-ratio:16/9;background:#000;border:1px solid #37222f;box-shadow:0 40px 100px -40px rgba(99,17,25,.75),-30px 0 90px -50px rgba(24,40,74,.9)">
+<div data-frame onMouseMove="{{ dm.wake }}" style="position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:18px;overflow:hidden;border:1px solid #37222f;box-shadow:0 40px 100px -40px rgba(99,17,25,.75),-30px 0 90px -50px rgba(24,40,74,.9)">
 <sc-if value="{{ dm.src }}">
-<video data-vid data-src="{{ dm.src }}" muted playsinline controls style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000"></video>
+<video data-vid data-src="{{ dm.src }}" onClick="{{ dm.toggle }}" muted playsinline style="cursor:pointer;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000"></video>
 </sc-if>
-<sc-if value="{{ dm.noSrc }}" hint-placeholder-val="{{ true }}">
-<div onClick="{{ dm.toggle }}" style="position:absolute;inset:0;cursor:pointer;background:repeating-linear-gradient(135deg,#22131f 0 8px,#28182a 8px 16px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font:400 12px 'IBM Plex Mono',monospace;color:#8f7a85">
+<sc-if value="{{ dm.noSrc }}">
+<div onClick="{{ dm.toggle }}" style="position:absolute;inset:0;cursor:pointer;background:repeating-linear-gradient(135deg,#130a11 0 8px,#180d17 8px 16px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font:400 12px 'IBM Plex Mono',monospace;color:#8f7a85">
 <div style="width:0;height:0;border-left:18px solid #8f7a85;border-top:11px solid transparent;border-bottom:11px solid transparent"></div>
 <div>{{ dm.slot }}</div>
 <div data-clock style="color:#ab98a0">0:00</div>
 </div>
 </sc-if>
+<div data-ctrl style="position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px;padding:5px 6px 5px 5px;border-radius:999px;background:rgba(8,4,10,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,240,230,.08);font:400 11px 'IBM Plex Mono',monospace;color:#dccdcc;transition:opacity .4s ease">
+<div data-pp onClick="{{ dm.toggle }}" style="flex:none;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(241,231,226,.08);color:rgb(192 150 95);font-size:10px;cursor:pointer;transition:transform .5s cubic-bezier(.34,1.9,.5,1),background .2s" style-hover="background:rgba(241,231,226,.14);transform:translateY(1px) scale(.94)" style-active="transform:translateY(2px) scale(.88);transition:transform .08s ease">▶</div>
+<span data-vtime style="white-space:nowrap">0:00</span>
+<div style="flex:1"></div>
+<sc-if value="{{ dm.src }}"><div data-mute onClick="{{ dm.mute }}" style="padding:7px 12px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:transform .5s cubic-bezier(.34,1.9,.5,1),background .2s" style-hover="background:rgba(241,231,226,.14);transform:translateY(1px) scale(.94)" style-active="transform:translateY(2px) scale(.88);transition:transform .08s ease">Sound off</div></sc-if>
+<div onClick="{{ dm.full }}" style="flex:none;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;transition:transform .5s cubic-bezier(.34,1.9,.5,1),background .2s" style-hover="background:rgba(241,231,226,.14);transform:translateY(1px) scale(.94)" style-active="transform:translateY(2px) scale(.88);transition:transform .08s ease">⤢</div>
 </div>
-<div data-track onClick="{{ dm.scrub }}" style="position:relative;height:54px;margin:4px 0 0;cursor:pointer">
-<div style="position:absolute;left:0;right:0;top:11px;height:2px;background:#37222f"></div>
-<div data-fill style="position:absolute;left:0;top:11px;height:2px;width:0;background:linear-gradient(90deg,#2b4a86,#C0965F);box-shadow:0 0 12px rgb(192 150 95)"></div>
+</div>
+<div data-track onClick="{{ dm.scrub }}" style="position:relative;height:54px;cursor:pointer">
+<div style="position:absolute;left:0;right:0;top:11px;height:2px;border-radius:2px;background:#37222f"></div>
+<div data-fill style="position:absolute;left:0;top:11px;height:2px;border-radius:2px;width:0;background:linear-gradient(90deg,#2b4a86,#C0965F);box-shadow:0 0 12px rgb(192 150 95)"></div>
 <sc-for list="{{ dm.steps }}" as="s">
 <div data-node data-t="{{ s.t }}" data-gate="{{ s.gate }}" onClick="{{ s.seek }}" style="position:absolute;left:{{ s.pos }};top:0;width:0">
-<div data-dot style="position:absolute;left:-6px;top:6px;width:12px;height:12px;box-sizing:border-box;border:1px solid #8f7a85;background:#1C0F18"></div>
-<sc-if value="{{ s.gate }}"><div style="position:absolute;left:10px;top:-3px;width:6px;height:30px;perspective:120px"><div data-flap style="width:100%;height:100%;background:#8f7a85;transform-origin:50% 0;transition:transform .5s cubic-bezier(.3,1.4,.5,1),background .3s"></div></div></sc-if>
+<div data-dot style="position:absolute;left:-6px;top:6px;width:12px;height:12px;border-radius:50%;box-sizing:border-box;border:1px solid #8f7a85;background:#08040A"></div>
+<sc-if value="{{ s.gate }}"><div style="position:absolute;left:10px;top:-3px;width:6px;height:30px;perspective:120px"><div data-flap style="width:100%;height:100%;border-radius:3px;background:#8f7a85;transform-origin:50% 0;transition:transform .5s cubic-bezier(.3,1.4,.5,1),background .3s"></div></div></sc-if>
 <div data-lbl style="position:absolute;left:{{ s.lblL }};width:100px;top:28px;text-align:{{ s.lblA }};font:400 10px/1.3 'IBM Plex Mono',monospace;color:#8f7a85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ s.num }} {{ s.short }}</div>
 </div>
 </sc-for>
-<div data-token style="position:absolute;left:0;top:4px;width:16px;height:16px;margin-left:-8px;background:rgb(192 150 95);box-shadow:0 0 22px rgb(192 150 95),0 0 0 4px #1C0F18;z-index:3;pointer-events:none"></div>
+<div data-token style="position:absolute;left:0;top:4px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:rgb(192 150 95);box-shadow:0 0 22px rgb(192 150 95),0 0 0 4px #08040A;z-index:3;pointer-events:none"></div>
 </div>
-<div style="display:grid;min-height:150px">
+<sc-if value="{{ dm.logInline }}">
+<div data-log style="display:flex;flex-direction:column;border-radius:18px;border:1px solid #37222f;background:#110910;max-height:{{ logMaxH }};overflow:auto;box-shadow:inset 0 1px 0 rgba(255,240,230,.07),0 30px 80px -40px rgba(99,17,25,.7)">
+<div style="display:flex;flex-direction:column;gap:10px;padding:14px 16px 12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8f7a85"><span style="display:flex;align-items:center;gap:8px"><span data-live style="width:7px;height:7px;border-radius:50%;background:#C05C1F;box-shadow:0 0 10px #C05C1F"></span><span style="white-space:nowrap">Run log · demo {{ dm.n }}</span></span><span data-status style="white-space:nowrap;letter-spacing:0;text-transform:none;color:#ab98a0">0:00</span></div>
+<div style="font:500 16px/1.3 'IBM Plex Sans',sans-serif;color:#f1e7e2">{{ dm.short }} <span style="font:400 12px 'IBM Plex Mono',monospace;color:#8f7a85">· {{ dm.tool }}</span></div>
+<div style="display:flex;gap:4px"><sc-for list="{{ dm.segs }}" as="g"><div style="flex:1;height:3px;border-radius:2px;background:{{ g.bg }}"></div></sc-for></div>
+</div>
 <sc-for list="{{ dm.steps }}" as="s">
-<div data-panel style="grid-area:1/1;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-start;justify-content:space-between;opacity:0;transition:opacity .4s,transform .4s">
-<div style="flex:1 1 380px;min-width:0;max-width:620px;display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;font:500 11px 'IBM Plex Mono',monospace;color:#8f7a85">
-<span style="color:rgb(192 150 95)">{{ s.num }}</span>
-<sc-if value="{{ s.part }}"><span style="color:#ab98a0">{{ s.part }}</span></sc-if>
-<sc-if value="{{ s.gate }}"><span style="padding:3px 7px;background:linear-gradient(90deg,#C05C1F,#631119);color:#f1e7e2">GATE · you decide</span></sc-if>
-<span>{{ s.ts }}</span>
+<div data-row style="border-top:1px solid #231520;transition:background .35s">
+<div onClick="{{ s.seek }}" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:13px 16px;cursor:pointer" style-hover="background:rgba(241,231,226,.03)">
+<span data-num style="font:500 11px 'IBM Plex Mono',monospace;color:#8f7a85;transition:color .3s">{{ s.num }}</span>
+<span data-ttl style="font:500 14px/1.3 'IBM Plex Sans',sans-serif;color:#ab98a0;transition:color .3s">{{ s.title }}</span>
+<span style="display:flex;gap:8px;align-items:center"><sc-if value="{{ s.gate }}"><span style="padding:2px 7px;border-radius:999px;background:linear-gradient(90deg,#C05C1F,#631119);color:#f1e7e2;font:500 10px 'IBM Plex Mono',monospace">GATE</span></sc-if><span style="font:400 11px 'IBM Plex Mono',monospace;color:#8f7a85">{{ s.ts }}</span></span>
 </div>
-<div style="font:500 clamp(20px,1.8vw,24px)/1.25 'IBM Plex Sans',sans-serif">{{ s.title }}</div>
-<div style="font:400 15px/1.6 'IBM Plex Sans',sans-serif;color:#ab98a0;text-wrap:pretty">{{ s.body }}</div>
-<sc-if value="{{ s.gate }}">
-<div data-approve onClick="{{ dm.approve }}" style="display:none;align-self:flex-start;margin-top:6px;padding:12px 18px;background:linear-gradient(135deg,#C05C1F,#631119);color:#f1e7e2;box-shadow:0 10px 30px -10px rgba(192,92,31,.7);font:500 13px 'IBM Plex Mono',monospace;cursor:pointer" style-hover="background:#f1e7e2">Paused for you — approve &amp; continue →</div>
-</sc-if>
-</div>
-<div style="flex:1 1 360px;min-width:0;max-width:460px">
+<div data-body style="display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1)">
+<div style="overflow:hidden;min-height:0">
+<div style="padding:0 16px 16px 60px;display:flex;flex-direction:column;gap:12px">
+<sc-if value="{{ s.part }}"><span style="font:500 11px 'IBM Plex Mono',monospace;color:#ab98a0">{{ s.part }}</span></sc-if>
+<div style="font:400 14px/1.6 'IBM Plex Sans',sans-serif;color:#ab98a0;text-wrap:pretty">{{ s.body }}</div>
 <sc-if value="{{ s.specs }}">
-<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#37222f;border:1px solid #37222f">
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#37222f;border:1px solid #37222f;border-radius:10px;overflow:hidden">
 <sc-for list="{{ s.specs }}" as="r">
-<div style="background:#241520;padding:10px 12px;display:flex;justify-content:space-between;gap:10px;font:400 12px 'IBM Plex Mono',monospace"><span style="color:#dccdcc">{{ r.k }}</span><sc-if value="{{ r.ok }}"><span style="color:rgb(192 150 95)">✓ pass</span></sc-if><sc-if value="{{ r.bad }}"><span style="color:#E0707A">✕ fail</span></sc-if></div>
+<div style="background:#150b13;padding:9px 11px;display:flex;justify-content:space-between;gap:8px;font:400 12px 'IBM Plex Mono',monospace"><span style="color:#dccdcc">{{ r.k }}</span><sc-if value="{{ r.ok }}"><span style="color:rgb(192 150 95)">✓</span></sc-if><sc-if value="{{ r.bad }}"><span style="color:#E0707A">✕</span></sc-if></div>
 </sc-for>
 </div>
 </sc-if>
 <sc-if value="{{ s.opts }}">
-<div style="border:1px solid #46293c;background:#241520;display:flex;flex-direction:column">
-<div style="padding:9px 14px;border-bottom:1px solid #37222f;font:400 11px/1.4 'IBM Plex Mono',monospace;color:#ab98a0"><span style="color:rgb(192 150 95)">agent ›</span> {{ s.ask }}</div>
+<div style="border:1px solid #46293c;border-radius:10px;overflow:hidden;background:#150b13;display:flex;flex-direction:column">
+<div style="padding:9px 12px;border-bottom:1px solid #37222f;font:400 11px/1.4 'IBM Plex Mono',monospace;color:#ab98a0"><span style="color:rgb(192 150 95)">agent ›</span> {{ s.ask }}</div>
 <sc-for list="{{ s.opts }}" as="o">
-<sc-if value="{{ o.chosen }}"><div style="padding:9px 14px;display:flex;justify-content:space-between;gap:12px;background:linear-gradient(135deg,rgba(24,40,74,.8),rgba(99,17,25,.6));font:400 13px 'IBM Plex Sans',sans-serif;color:#f1e7e2"><span>{{ o.label }}</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:rgb(192 150 95);white-space:nowrap">✓ your pick</span></div></sc-if>
-<sc-if value="{{ o.other }}"><div style="padding:9px 14px;font:400 13px 'IBM Plex Sans',sans-serif;color:#ab98a0;border-top:1px solid #28182a">{{ o.label }}</div></sc-if>
+<sc-if value="{{ o.chosen }}"><div style="padding:9px 12px;display:flex;justify-content:space-between;gap:10px;background:linear-gradient(135deg,rgba(24,40,74,.8),rgba(99,17,25,.6));font:400 13px 'IBM Plex Sans',sans-serif;color:#f1e7e2"><span>{{ o.label }}</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:rgb(192 150 95);white-space:nowrap">✓ your pick</span></div></sc-if>
+<sc-if value="{{ o.other }}"><div style="padding:9px 12px;font:400 13px 'IBM Plex Sans',sans-serif;color:#ab98a0;border-top:1px solid #180d17">{{ o.label }}</div></sc-if>
 </sc-for>
 </div>
 </sc-if>
 <sc-if value="{{ s.pattern }}">
 <div style="display:flex;flex-direction:column;gap:8px">
-<div style="display:flex;gap:6px;padding:12px;border:1px solid #37222f;background:#241520">
-<sc-for list="{{ s.pattern }}" as="f"><div style="flex:1;height:46px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font:600 10px 'IBM Plex Mono',monospace;background:{{ f.bg }};color:{{ f.fg }}">{{ f.k }}</div></sc-for>
+<div style="display:flex;gap:4px;padding:10px;border:1px solid #37222f;border-radius:10px;background:#150b13">
+<sc-for list="{{ s.pattern }}" as="f"><div style="flex:1;height:40px;border-radius:3px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font:600 10px 'IBM Plex Mono',monospace;background:{{ f.bg }};color:{{ f.fg }}">{{ f.k }}</div></sc-for>
 </div>
-<div style="font:400 11px 'IBM Plex Mono',monospace;color:#8f7a85">DIFF pair · common-centroid · dummies at both ends · guard ring</div>
+<div style="font:400 11px 'IBM Plex Mono',monospace;color:#8f7a85">DIFF pair · common-centroid · dummies · guard ring</div>
 </div>
 </sc-if>
 <sc-if value="{{ s.errs }}">
-<div style="display:flex;gap:1px;background:#37222f;border:1px solid #37222f">
+<div style="display:flex;gap:1px;background:#37222f;border:1px solid #37222f;border-radius:10px;overflow:hidden">
 <sc-for list="{{ s.errs }}" as="r">
-<div style="flex:1;background:#241520;padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font:500 11px 'IBM Plex Mono',monospace;color:#8f7a85">{{ r.k }}</span><sc-if value="{{ r.ok }}"><span style="font:500 14px 'IBM Plex Mono',monospace;color:rgb(192 150 95)">{{ r.v }}</span></sc-if><sc-if value="{{ r.bad }}"><span style="font:500 14px 'IBM Plex Mono',monospace;color:#E0707A">{{ r.v }}</span></sc-if></div>
+<div style="flex:1;background:#150b13;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><span style="font:500 11px 'IBM Plex Mono',monospace;color:#8f7a85">{{ r.k }}</span><sc-if value="{{ r.ok }}"><span style="font:500 13px 'IBM Plex Mono',monospace;color:rgb(192 150 95)">{{ r.v }}</span></sc-if><sc-if value="{{ r.bad }}"><span style="font:500 13px 'IBM Plex Mono',monospace;color:#E0707A">{{ r.v }}</span></sc-if></div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ s.gate }}">
+<div data-approve onClick="{{ dm.approve }}" style="display:none;align-self:flex-start;padding:11px 18px;border-radius:999px;background:linear-gradient(135deg,#C05C1F,#631119);color:#f1e7e2;box-shadow:0 10px 30px -10px rgba(192,92,31,.7);font:500 12px 'IBM Plex Mono',monospace;cursor:pointer;transition:filter .2s ease,border-color .2s ease,box-shadow .3s ease,transform .5s cubic-bezier(.34,1.9,.5,1)" style-hover="background:#f1e7e2;color:#08040A;transform:translateY(2px) scale(.965)" style-active="transform:translateY(3px) scale(.93);transition:transform .08s ease">Paused for you — approve &amp; continue →</div>
+</sc-if>
+</div>
+</div>
+</div>
+</div>
 </sc-for>
 </div>
 </sc-if>
 </div>
+</sc-for>
+</div>
+<sc-if value="{{ sideLog }}">
+<div style="position:sticky;top:140px;min-width:0">
+<sc-for list="{{ demos }}" as="dm"><sc-if value="{{ dm.logSide }}">
+<div data-log style="display:flex;flex-direction:column;border-radius:18px;border:1px solid #37222f;background:#110910;max-height:{{ logMaxH }};overflow:auto;box-shadow:inset 0 1px 0 rgba(255,240,230,.07),0 30px 80px -40px rgba(99,17,25,.7)">
+<div style="display:flex;flex-direction:column;gap:10px;padding:14px 16px 12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#8f7a85"><span style="display:flex;align-items:center;gap:8px"><span data-live style="width:7px;height:7px;border-radius:50%;background:#C05C1F;box-shadow:0 0 10px #C05C1F"></span><span style="white-space:nowrap">Run log · demo {{ dm.n }}</span></span><span data-status style="white-space:nowrap;letter-spacing:0;text-transform:none;color:#ab98a0">0:00</span></div>
+<div style="font:500 16px/1.3 'IBM Plex Sans',sans-serif;color:#f1e7e2">{{ dm.short }} <span style="font:400 12px 'IBM Plex Mono',monospace;color:#8f7a85">· {{ dm.tool }}</span></div>
+<div style="display:flex;gap:4px"><sc-for list="{{ dm.segs }}" as="g"><div style="flex:1;height:3px;border-radius:2px;background:{{ g.bg }}"></div></sc-for></div>
+</div>
+<sc-for list="{{ dm.steps }}" as="s">
+<div data-row style="border-top:1px solid #231520;transition:background .35s">
+<div onClick="{{ s.seek }}" style="display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:13px 16px;cursor:pointer" style-hover="background:rgba(241,231,226,.03)">
+<span data-num style="font:500 11px 'IBM Plex Mono',monospace;color:#8f7a85;transition:color .3s">{{ s.num }}</span>
+<span data-ttl style="font:500 14px/1.3 'IBM Plex Sans',sans-serif;color:#ab98a0;transition:color .3s">{{ s.title }}</span>
+<span style="display:flex;gap:8px;align-items:center"><sc-if value="{{ s.gate }}"><span style="padding:2px 7px;border-radius:999px;background:linear-gradient(90deg,#C05C1F,#631119);color:#f1e7e2;font:500 10px 'IBM Plex Mono',monospace">GATE</span></sc-if><span style="font:400 11px 'IBM Plex Mono',monospace;color:#8f7a85">{{ s.ts }}</span></span>
+</div>
+<div data-body style="display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1)">
+<div style="overflow:hidden;min-height:0">
+<div style="padding:0 16px 16px 60px;display:flex;flex-direction:column;gap:12px">
+<sc-if value="{{ s.part }}"><span style="font:500 11px 'IBM Plex Mono',monospace;color:#ab98a0">{{ s.part }}</span></sc-if>
+<div style="font:400 14px/1.6 'IBM Plex Sans',sans-serif;color:#ab98a0;text-wrap:pretty">{{ s.body }}</div>
+<sc-if value="{{ s.specs }}">
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#37222f;border:1px solid #37222f;border-radius:10px;overflow:hidden">
+<sc-for list="{{ s.specs }}" as="r">
+<div style="background:#150b13;padding:9px 11px;display:flex;justify-content:space-between;gap:8px;font:400 12px 'IBM Plex Mono',monospace"><span style="color:#dccdcc">{{ r.k }}</span><sc-if value="{{ r.ok }}"><span style="color:rgb(192 150 95)">✓</span></sc-if><sc-if value="{{ r.bad }}"><span style="color:#E0707A">✕</span></sc-if></div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ s.opts }}">
+<div style="border:1px solid #46293c;border-radius:10px;overflow:hidden;background:#150b13;display:flex;flex-direction:column">
+<div style="padding:9px 12px;border-bottom:1px solid #37222f;font:400 11px/1.4 'IBM Plex Mono',monospace;color:#ab98a0"><span style="color:rgb(192 150 95)">agent ›</span> {{ s.ask }}</div>
+<sc-for list="{{ s.opts }}" as="o">
+<sc-if value="{{ o.chosen }}"><div style="padding:9px 12px;display:flex;justify-content:space-between;gap:10px;background:linear-gradient(135deg,rgba(24,40,74,.8),rgba(99,17,25,.6));font:400 13px 'IBM Plex Sans',sans-serif;color:#f1e7e2"><span>{{ o.label }}</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:rgb(192 150 95);white-space:nowrap">✓ your pick</span></div></sc-if>
+<sc-if value="{{ o.other }}"><div style="padding:9px 12px;font:400 13px 'IBM Plex Sans',sans-serif;color:#ab98a0;border-top:1px solid #180d17">{{ o.label }}</div></sc-if>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ s.pattern }}">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;gap:4px;padding:10px;border:1px solid #37222f;border-radius:10px;background:#150b13">
+<sc-for list="{{ s.pattern }}" as="f"><div style="flex:1;height:40px;border-radius:3px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font:600 10px 'IBM Plex Mono',monospace;background:{{ f.bg }};color:{{ f.fg }}">{{ f.k }}</div></sc-for>
+</div>
+<div style="font:400 11px 'IBM Plex Mono',monospace;color:#8f7a85">DIFF pair · common-centroid · dummies · guard ring</div>
+</div>
+</sc-if>
+<sc-if value="{{ s.errs }}">
+<div style="display:flex;gap:1px;background:#37222f;border:1px solid #37222f;border-radius:10px;overflow:hidden">
+<sc-for list="{{ s.errs }}" as="r">
+<div style="flex:1;background:#150b13;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><span style="font:500 11px 'IBM Plex Mono',monospace;color:#8f7a85">{{ r.k }}</span><sc-if value="{{ r.ok }}"><span style="font:500 13px 'IBM Plex Mono',monospace;color:rgb(192 150 95)">{{ r.v }}</span></sc-if><sc-if value="{{ r.bad }}"><span style="font:500 13px 'IBM Plex Mono',monospace;color:#E0707A">{{ r.v }}</span></sc-if></div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ s.gate }}">
+<div data-approve onClick="{{ dm.approve }}" style="display:none;align-self:flex-start;padding:11px 18px;border-radius:999px;background:linear-gradient(135deg,#C05C1F,#631119);color:#f1e7e2;box-shadow:0 10px 30px -10px rgba(192,92,31,.7);font:500 12px 'IBM Plex Mono',monospace;cursor:pointer;transition:filter .2s ease,border-color .2s ease,box-shadow .3s ease,transform .5s cubic-bezier(.34,1.9,.5,1)" style-hover="background:#f1e7e2;color:#08040A;transform:translateY(2px) scale(.965)" style-active="transform:translateY(3px) scale(.93);transition:transform .08s ease">Paused for you — approve &amp; continue →</div>
+</sc-if>
+</div>
+</div>
+</div>
 </div>
 </sc-for>
 </div>
+</sc-if></sc-for>
 </div>
+</sc-if>
 </div>
-</sc-for>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:64px 0 50px;border-top:1px solid #2e1c29">
-<div style="font:300 clamp(28px,3vw,42px)/1.15 'IBM Plex Sans',sans-serif;letter-spacing:-.02em">Want to see it on your circuit?</div>
-<div onClick="{{ goContact }}" style="transition:filter .2s ease,border-color .2s ease;padding:16px 26px;background:linear-gradient(135deg,#C0965F,#C05C1F);color:#1C0F18;font:500 14px 'IBM Plex Mono',monospace;cursor:pointer" style-hover="background:#f1e7e2">03 Contact →</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:64px 0 50px;border-top:1px solid #231520">
+<div style="font:300 clamp(28px,3vw,42px)/1.15 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;text-shadow:0 0 24px rgba(241,231,226,.16),0 0 64px rgba(192,150,95,.14)">Want to see it on your circuit?</div>
+<div onClick="{{ goContact }}" style="transition:filter .2s ease,border-color .2s ease,box-shadow .3s ease,transform .5s cubic-bezier(.34,1.9,.5,1);padding:16px 26px;border-radius:999px;background:linear-gradient(135deg,#C0965F,#C05C1F);box-shadow:inset 0 1px 0 rgba(255,245,225,.45),0 10px 28px -14px rgba(192,150,95,.65);color:#08040A;font:500 14px 'IBM Plex Mono',monospace;cursor:pointer" style-hover="background:#f1e7e2;transform:translateY(2px) scale(.965);box-shadow:inset 0 1px 0 rgba(255,245,225,.3),0 3px 10px -6px rgba(192,150,95,.5)" style-active="transform:translateY(3px) scale(.93);transition:transform .08s ease">03 Contact →</div>
 </div>
 </div>
 </sc-if>
@@ -321,17 +409,17 @@
 <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:40px">
 <div style="display:flex;flex-direction:column;gap:22px;max-width:720px">
 <div style="font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#ab98a0">Contact</div>
-<h2 style="margin:0;font:300 clamp(54px,7vw,104px)/0.95 'IBM Plex Sans',sans-serif;letter-spacing:-.04em">Vaibhav Singh</h2>
+<h2 style="margin:0;font:300 clamp(54px,7vw,104px)/0.95 'IBM Plex Sans',sans-serif;letter-spacing:-.04em;text-shadow:0 0 24px rgba(241,231,226,.16),0 0 64px rgba(192,150,95,.14)">Vaibhav Singh</h2>
 <div style="font:400 clamp(18px,1.6vw,22px)/1.5 'IBM Plex Sans',sans-serif;color:#dccdcc;text-wrap:pretty">I build AI agents and automation for analog chip design. Founder of SiliCAD. B.Tech Electronics &amp; VLSI, IIIT-Delhi.</div>
 </div>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="assets/Vaibhav_Singh_CV.pdf" download="Vaibhav_Singh_CV.pdf" style="display:inline-block;transition:filter .2s ease,border-color .2s ease;padding:16px 24px;background:linear-gradient(135deg,#C0965F,#C05C1F);color:#1C0F18;font:500 14px 'IBM Plex Mono',monospace" style-hover="background:#f1e7e2;color:#1C0F18">Download CV ↓</a>
-<a href="assets/Vaibhav_Singh_CV.pdf" target="_blank" style="padding:16px 24px;border:1px solid #46293c;font:500 14px 'IBM Plex Mono',monospace" style-hover="border-color:#f1e7e2;color:#f1e7e2">Open PDF ↗</a>
+<a href="assets/Vaibhav_Singh_CV.pdf" download="Vaibhav_Singh_CV.pdf" style="display:inline-block;transition:filter .2s ease,border-color .2s ease,box-shadow .3s ease,transform .5s cubic-bezier(.34,1.9,.5,1);padding:16px 24px;border-radius:999px;background:linear-gradient(135deg,#C0965F,#C05C1F);box-shadow:inset 0 1px 0 rgba(255,245,225,.45),0 10px 28px -14px rgba(192,150,95,.65);color:#08040A;font:500 14px 'IBM Plex Mono',monospace" style-hover="background:#f1e7e2;color:#08040A;transform:translateY(2px) scale(.965);box-shadow:inset 0 1px 0 rgba(255,245,225,.3),0 3px 10px -6px rgba(192,150,95,.5)" style-active="transform:translateY(3px) scale(.93);transition:transform .08s ease">Download CV ↓</a>
+<a href="assets/Vaibhav_Singh_CV.pdf" target="_blank" style="transition:filter .2s ease,border-color .2s ease,box-shadow .3s ease,transform .5s cubic-bezier(.34,1.9,.5,1);padding:16px 24px;border-radius:999px;border:1px solid #46293c;box-shadow:inset 0 1px 0 rgba(255,240,230,.07);font:500 14px 'IBM Plex Mono',monospace" style-hover="border-color:#f1e7e2;color:#f1e7e2;transform:translateY(2px) scale(.965)" style-active="transform:translateY(3px) scale(.93);transition:transform .08s ease">Open PDF ↗</a>
 </div>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));border-top:1px solid #46293c;border-left:1px solid #46293c">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
 <sc-for list="{{ links }}" as="lk" hint-placeholder-count="3">
-<a href="{{ lk.href }}" target="_blank" style="display:flex;flex-direction:column;gap:14px;padding:28px 26px;border-right:1px solid #46293c;border-bottom:1px solid #46293c" style-hover="background:#22131f;color:#f1e7e2">
+<a href="{{ lk.href }}" target="_blank" style="display:flex;flex-direction:column;gap:14px;padding:28px 26px;border:1px solid #46293c;border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,240,230,.07);transition:background .25s" style-hover="background:#130a11;color:#f1e7e2">
 <div style="font:500 12px 'IBM Plex Mono',monospace;color:rgb(192 150 95)">{{ lk.label }}</div>
 <div style="font:400 20px 'IBM Plex Sans',sans-serif;overflow-wrap:anywhere">{{ lk.text }}</div>
 </a>
@@ -360,7 +448,7 @@
 <div style="font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#ab98a0">Toolbox</div>
 <div style="display:flex;flex-wrap:wrap;gap:8px">
 <sc-for list="{{ skills }}" as="sk" hint-placeholder-count="12">
-<div style="padding:7px 12px;border:1px solid #37222f;font:400 12px 'IBM Plex Mono',monospace;color:#dccdcc">{{ sk }}</div>
+<div style="padding:7px 13px;border-radius:999px;border:1px solid #37222f;font:400 12px 'IBM Plex Mono',monospace;color:#dccdcc">{{ sk }}</div>
 </sc-for>
 </div>
 </div>
@@ -369,7 +457,7 @@
 </div>
 </sc-if>
 
-<div style="padding:28px clamp(20px,4vw,48px);border-top:1px solid #2e1c29;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px 'IBM Plex Mono',monospace;color:#8f7a85">
+<div style="padding:28px clamp(20px,4vw,48px);border-top:1px solid #231520;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:400 12px 'IBM Plex Mono',monospace;color:#8f7a85">
 <div>SiliCAD — Spec to Silicon</div>
 <div style="display:flex;gap:20px"><a href="mailto:hi.vaibhavsingh@gmail.com">Email</a><a href="https://linkedin.com/in/vs34" target="_blank">LinkedIn</a><a href="https://github.com/vs34" target="_blank">GitHub</a></div>
 </div>
@@ -377,7 +465,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;video1&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Demo videos (URL or file path)&quot;},&quot;video2&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Demo videos (URL or file path)&quot;},&quot;video3&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Demo videos (URL or file path)&quot;},&quot;video4&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Demo videos (URL or file path)&quot;},&quot;startTab&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;vision&quot;,&quot;demos&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;vision&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  heroSec = React.createRef(); heroScene = React.createRef(); heroWorld = React.createRef();
+  navPill = React.createRef(); heroSec = React.createRef(); heroScene = React.createRef(); heroWorld = React.createRef();
   heroLegend = React.createRef(); heroCaption = React.createRef(); heroHint = React.createRef();
   archSec = React.createRef(); spot = React.createRef(); intro = React.createRef(); h1 = React.createRef(); termSec = React.createRef(); railWrap = React.createRef();
   state = { aud: this.readAud(), showIntro: !(() => { try { return sessionStorage.getItem('silicad-intro'); } catch (e) { return true; } })(), tab: this.readTab(), narrow: window.innerWidth < 820, dNarrow: window.innerWidth < 1000, short: window.innerHeight < 700 };
@@ -407,8 +495,8 @@ class Component extends DCLogic {
   };
   go = (tab) => { if (location.hash !== '#' + tab) history.replaceState(null, '', '#' + tab); this.swap(tab); };
   onHash = () => { this.swap(this.readTab()); };
-  onResize = () => { const w = window.innerWidth, hh = window.innerHeight, narrow = w < 720 || w / hh < .9, short = !narrow && hh < 620, tiny = !narrow && hh < 480;
-    if (narrow !== this.state.narrow || short !== this.state.short || tiny !== this.state.tiny) this.setState({ narrow, short, tiny }); };
+  onResize = () => { if ((window.innerWidth < 340) !== !!this.state.xs) this.setState({ xs: window.innerWidth < 340 }); const w = window.innerWidth, hh = window.innerHeight, narrow = w < 720 || w / hh < .9, stack = w < 1100, short = !narrow && hh < 620, tiny = !narrow && hh < 560;
+    if (narrow !== this.state.narrow || short !== this.state.short || tiny !== this.state.tiny || stack !== this.state.stack) this.setState({ narrow, short, tiny, stack }); };
   componentDidMount() {
     this.onResize(); window.addEventListener('resize', this.onResize); this.componentDidUpdate();
     window.addEventListener('hashchange', this.onHash);
@@ -418,9 +506,12 @@ class Component extends DCLogic {
     const loop = (now) => { try { this.frame(now); } catch (e) {} this.raf = requestAnimationFrame(loop); };
     this.raf = requestAnimationFrame(loop);
   }
-  componentDidUpdate() { document.documentElement.style.scrollSnapType = this.state.tab === 'demos' ? 'y proximity' : ''; }
+  componentDidUpdate(pp, ps) { document.documentElement.style.scrollSnapType = '';
+  }
   componentWillUnmount() { document.documentElement.style.scrollSnapType = ''; cancelAnimationFrame(this.raf); window.removeEventListener('hashchange', this.onHash); window.removeEventListener('resize', this.onResize); window.removeEventListener('mousemove', this.onMove); }
   frame(now) {
+    const np = this.navPill.current, on = np && np.parentElement.querySelector('[data-tabon]');
+    if (on) { const l = on.offsetLeft + 'px', w = on.offsetWidth + 'px'; if (np.style.left !== l) np.style.left = l; if (np.style.width !== w) np.style.width = w; }
     const t = (now - this.t0) / 1000, T = now / 1000;
     const cl = (x) => Math.min(1, Math.max(0, x));
     const ss = (a, b, x) => { x = cl((x - a) / (b - a)); return x * x * (3 - 2 * x); };
@@ -428,18 +519,18 @@ class Component extends DCLogic {
     const prog = (el) => { const r = el.getBoundingClientRect(); return cl(-r.top / Math.max(1, r.height - vh)); };
     const hs = this.heroSec.current, hw = this.heroWorld.current, hsc = this.heroScene.current;
     if (hs && hw && hsc) {
-      const p = prog(hs), tilt = ss(0, .45, p), e = ss(.35, .9, p);
+      const p = prog(hs), tilt = ss(0, .35, p), e = ss(.25, .75, p);
       const sc = this.state.narrow ? Math.min(hsc.clientWidth / 460, hsc.clientHeight / 330) : Math.min(1.25, hsc.clientWidth / 480, hsc.clientHeight / 520);
       const nw = this.state.narrow; hw.style.transform = `scale(${nw ? sc * (1 - e * .34) : sc}) translateY(${nw ? e * 70 : -e * 40}px) rotateX(${tilt * 58}deg) rotateZ(${-tilt * 34 + Math.sin(T * .35) * 3 * tilt + (this.rot || 0)}deg)`;
       if (!this.drag && this.rot) this.rot *= .97;
-      if (this.h1.current) { const w = ss(.15, 1.25, t); this.h1.current.style.clipPath = `inset(-10% ${(1 - w) * 100}% -10% 0)`; }
+      if (this.h1.current) { const w = ss(.15, 1.25, t); this.h1.current.style.clipPath = w >= 1 ? 'none' : `inset(-40% calc(${(1 - w) * 100}% - ${w * 90}px) -40% -90px)`; }
       const Z = { ring: 0, diff: 4 + e * 42, fing: 12 + e * 94, cont: 20 + e * 146, m1: 28 + e * 200 };
       const A = { ring: ss(0, .4, t), diff: ss(.1, .5, t), fing: 1, cont: ss(1.9, 2.2, t), m1: ss(2.2, 2.7, t) };
       hw.querySelectorAll('[data-l]').forEach(el => { const k = el.dataset.l;
         el.style.transform = `translateZ(${Z[k] + (1 - A[k]) * 90}px)`; el.style.opacity = A[k]; });
       hw.querySelectorAll('[data-f]').forEach((el, i) => { const a = ss(.3 + i * .13, .6 + i * .13, t), ty = el.dataset.f;
         el.style.transform = `translateZ(${(1 - a) * 110}px)`; el.style.opacity = a;
-        el.style.background = ty === 'A' ? CU : ty === 'B' ? '#e6d9d3' : DIM; el.style.color = ty === 'D' ? '#ab98a0' : '#1C0F18'; });
+        el.style.background = ty === 'A' ? CU : ty === 'B' ? '#e6d9d3' : DIM; el.style.color = ty === 'D' ? '#ab98a0' : '#08040A'; });
       hw.querySelectorAll('[data-cf]').forEach(col => { const ty = col.dataset.cf;
         col.querySelectorAll('[data-cs]').forEach(s => { s.style.opacity = s.dataset.cs === ty ? 1 : 0; }); });
       if (this.heroLegend.current) this.heroLegend.current.style.opacity = ss(.45, .75, p);
@@ -457,7 +548,7 @@ class Component extends DCLogic {
     const lr = [...document.querySelectorAll('[data-layer]')], pl = [...document.querySelectorAll('[data-pulse]')];
     if (lr.length) { const P = (T % 6) / 6, down = P < .5, idx = (down ? P * 2 : (1 - P) * 2) * (lr.length - 1), col = down ? 'rgb(192 150 95)' : '#6f8fd0';
       lr.forEach((el, k) => { const on = Math.abs(idx - k) < .35; el.style.borderColor = on ? col : '#37222f';
-        el.style.background = on ? 'linear-gradient(120deg,rgba(24,40,74,.55),rgba(99,17,25,.35))' : '#241520'; el.style.boxShadow = on ? `0 0 40px -18px ${col}` : 'none'; });
+        el.style.background = on ? 'linear-gradient(120deg,rgba(24,40,74,.55),rgba(99,17,25,.35))' : '#150b13'; el.style.boxShadow = on ? `inset 0 1px 0 rgba(255,240,230,.07),0 0 40px -18px ${col}` : 'inset 0 1px 0 rgba(255,240,230,.07)'; });
       pl.forEach((d, k) => { const f = idx - k; d.style.opacity = f > .15 && f < .85 ? 1 : 0; d.style.top = (cl((f - .15) / .7) * 22 - 3) + 'px'; d.style.background = col; d.style.boxShadow = `0 0 12px ${col}`; }); }
     const ts = this.termSec.current;
     if (ts) { const r = ts.getBoundingClientRect(); if (!this.termT0 && r.top < vh * .8) this.termT0 = now;
@@ -470,46 +561,73 @@ class Component extends DCLogic {
     const rw = this.railWrap.current, dt = Math.min(.1, (now - (this._lastNow || now)) / 1000); this._lastNow = now;
     if (rw) {
       const fmt = x => { x = Math.max(0, Math.floor(x)); return Math.floor(x / 60) + ':' + String(x % 60).padStart(2, '0'); };
-      rw.querySelectorAll('[data-chapter]').forEach(ch => {
+      const chs = [...rw.querySelectorAll('[data-chapter]')]; let act = 0, best = 1e9;
+      act = this.state.demo || 0;
+      chs.forEach((c, k) => { const r = c.getBoundingClientRect(); if (k !== act && r.top < vh * .45 && r.bottom > vh * .55) act = k; });
+      if (act !== (this.state.demo || 0) && !this.pickLock) this.setState({ demo: act });
+      const live = document.querySelector('[data-live]'); if (live) live.style.opacity = .45 + .55 * Math.abs(Math.sin(T * 2.4));
+      chs.forEach((ch, idx) => {
         const st = this.ch(ch), v = ch.querySelector('[data-vid]');
         if (v && v.dataset.src && !v.dataset.src.includes('{') && v.getAttribute('src') !== v.dataset.src) v.setAttribute('src', v.dataset.src);
-        const r = ch.getBoundingClientRect(), inView = r.top < vh * .65 && r.bottom > vh * .35;
+        const r = ch.getBoundingClientRect(), inView = idx === act && r.top < vh * .8 && r.bottom > vh * .2;
+        ch.style.opacity = idx === act ? 1 : .4; ch.style.filter = idx === act ? 'none' : 'saturate(.5)';
         const dur = v && isFinite(v.duration) && v.duration > 0 ? v.duration : +ch.dataset.dur || 60;
         if (inView && !st.auto) { st.auto = true; st.play = st.held == null; if (v && st.play) v.play().catch(() => {}); }
         if (!inView && st.auto) { st.auto = false; st.play = false; if (v) v.pause(); }
         const nodes = [...ch.querySelectorAll('[data-node]')];
         if (v) { if (st.held != null && !v.paused) { st.passed.add(st.held); st.held = null; } st.t = v.currentTime; st.play = !v.paused; }
-        else if (st.play) { st.t += dt; if (st.t >= dur) { st.t = 0; st.passed.clear(); } }
+        else if (st.play) { st.t = Math.min(dur, st.t + dt); if (st.t >= dur) st.play = false; }
         nodes.forEach((nd, k) => { if (nd.dataset.gate !== 'true') return; const gt = +nd.dataset.t + 2;
           if (st.held == null && !st.passed.has(k) && st.t >= gt && st.t - gt < 1.5) { st.held = k; st.play = false; if (v) { v.pause(); v.currentTime = gt; } st.t = gt; } });
         const t = st.t, pct = Math.min(100, t / dur * 100);
         let cur = 0; nodes.forEach((nd, k) => { if (t >= +nd.dataset.t) cur = k; });
-        const fill = ch.querySelector('[data-fill]'), tok = ch.querySelector('[data-token]');
+        const fill = ch.querySelector('[data-fill]'), tok = ch.querySelector('[data-token]'), trEl = ch.querySelector('[data-track]'), trW = trEl ? trEl.clientWidth : 999;
         if (fill) fill.style.width = pct + '%'; if (tok) tok.style.left = pct + '%';
         nodes.forEach((nd, k) => { const done = t >= +nd.dataset.t, d = nd.querySelector('[data-dot]'), l = nd.querySelector('[data-lbl]'), f = nd.querySelector('[data-flap]');
-          if (d) { d.style.background = done ? CU : '#1C0F18'; d.style.borderColor = done ? CU : '#8f7a85'; }
-          if (l) l.style.color = k === cur ? '#f1e7e2' : '#8f7a85';
+          if (d) { d.style.background = done ? CU : '#08040A'; d.style.borderColor = done ? CU : '#8f7a85'; }
+          if (l) { l.style.color = k === cur ? '#f1e7e2' : '#8f7a85'; l.style.opacity = trW < 560 && k !== cur ? 0 : 1; l.style.transition = 'opacity .3s'; }
           if (f) { const open = st.passed.has(k), held = st.held === k;
             f.style.transform = open ? 'rotateX(-80deg)' : 'rotateX(0deg)';
             f.style.background = open ? '#C05C1F' : held ? (Math.sin(T * 6) > 0 ? '#C05C1F' : '#f1e7e2') : '#8f7a85';
             f.style.boxShadow = open || held ? '0 0 16px #C05C1F' : 'none'; } });
-        ch.querySelectorAll('[data-panel]').forEach((pn, k) => { const on = k === cur;
-          pn.style.opacity = on ? 1 : 0; pn.style.transform = on ? 'none' : 'translateY(10px)'; pn.style.pointerEvents = on ? 'auto' : 'none';
-          const ap = pn.querySelector('[data-approve]'); if (ap) ap.style.display = st.held === k ? 'inline-block' : 'none'; });
-        const clk = ch.querySelector('[data-clock]'); if (clk) clk.textContent = (st.held != null ? 'waiting at gate · ' : st.play ? '' : 'paused · ') + fmt(t) + ' / ' + fmt(dur) + ' · preview';
+        const lg = this.state.stack ? ch.querySelector('[data-log]') : idx === act ? document.querySelector('[data-log]') : null;
+        if (lg) lg.querySelectorAll('[data-body]').forEach((b, k) => { b.style.gridTemplateRows = k === cur ? '1fr' : '0fr'; });
+        if (lg) lg.querySelectorAll('[data-row]').forEach((rw2, k) => { const on = k === cur, done = nodes[k] && t >= +nodes[k].dataset.t, held = st.held === k;
+          rw2.style.background = held ? 'linear-gradient(90deg,rgba(192,92,31,.28),rgba(99,17,25,.2))' : on ? 'linear-gradient(90deg,rgba(24,40,74,.6),rgba(99,17,25,.3))' : 'transparent';
+          
+          const nm = rw2.querySelector('[data-num]'); if (nm) nm.style.color = done ? CU : '#8f7a85';
+          const tt = rw2.querySelector('[data-ttl]'); if (tt) tt.style.color = on ? '#f1e7e2' : done ? '#dccdcc' : '#ab98a0';
+          const ap = rw2.querySelector('[data-approve]'); if (ap) ap.style.display = held ? 'inline-block' : 'none'; });
+        const stTxt = (st.held != null ? 'waiting for you · ' : st.play ? '' : 'paused · ') + fmt(t) + ' / ' + fmt(dur);
+        const fr = ch.querySelector('[data-frame]'); if (fr) { const hd = st.held != null, a = .5 + .35 * Math.sin(T * 3);
+          fr.style.borderColor = hd ? 'rgba(192,92,31,' + a + ')' : '#37222f';
+          fr.style.boxShadow = hd ? '0 0 0 1px rgba(192,92,31,' + (a * .5) + '),0 0 90px -20px rgba(192,92,31,' + a + '),0 40px 100px -40px rgba(99,17,25,.75)' : '0 40px 100px -40px rgba(99,17,25,.75),-30px 0 90px -50px rgba(24,40,74,.9)'; }
+        const pp = ch.querySelector('[data-pp]'); if (pp) pp.textContent = st.play ? '❚❚' : '▶';
+        const vt = ch.querySelector('[data-vtime]'); if (vt) vt.textContent = (st.held != null ? 'waiting for you · ' : '') + fmt(t) + ' / ' + fmt(dur);
+        const mu = ch.querySelector('[data-mute]'); if (mu && v) mu.textContent = v.muted ? 'Sound off' : 'Sound on';
+        const cb = ch.querySelector('[data-ctrl]'); if (cb) cb.style.opacity = st.play && now - (st.wake || 0) > 2200 ? 0 : 1;
+        const clk = ch.querySelector('[data-clock]'); if (clk) clk.textContent = stTxt + ' · preview';
+        const sts = lg && lg.querySelector('[data-status]'); if (sts) sts.textContent = stTxt;
+        const mn = document.querySelector('[data-mini="' + idx + '"]'); if (mn) mn.style.width = pct + '%';
+        if ((v ? v.ended : t >= dur) && !st.adv && idx === act && idx < 3) { st.adv = true; clearTimeout(this.advT); this.advT = setTimeout(() => this.pick(idx + 1), 1400); }
       });
     }
   }
   ch(el) { if (!el._st) el._st = { t: 0, play: false, auto: false, held: null, passed: new Set() }; return el._st; }
   chapterEl(i) { const rw = this.railWrap.current; return rw ? rw.querySelectorAll('[data-chapter]')[i] : null; }
+  pick(i) { const el = this.chapterEl(i); if (!el) return; clearTimeout(this.advT);
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 140, behavior: 'smooth' }); }
   seekTo(i, time) { const el = this.chapterEl(i); if (!el) return; const st = this.ch(el), v = el.querySelector('[data-vid]');
     st.passed = new Set(); st.held = null;
     el.querySelectorAll('[data-node]').forEach((nd, k) => { if (nd.dataset.gate === 'true' && +nd.dataset.t + 2 < time) st.passed.add(k); });
     if (el.querySelectorAll('[data-node]')[[...el.querySelectorAll('[data-node]')].findIndex(nd => +nd.dataset.t === time)]?.dataset.gate === 'true') st.passed.delete([...el.querySelectorAll('[data-node]')].findIndex(nd => +nd.dataset.t === time));
-    st.t = time; st.play = true; if (v) { try { v.currentTime = time; } catch (e) {} v.play().catch(() => {}); } }
+    st.t = time; st.play = true; st.adv = false; if (v) { try { v.currentTime = time; } catch (e) {} v.play().catch(() => {}); } }
   approve(i) { const el = this.chapterEl(i); if (!el) return; const st = this.ch(el), v = el.querySelector('[data-vid]');
     if (st.held != null) st.passed.add(st.held); st.held = null; st.play = true; if (v) v.play().catch(() => {}); }
-  toggle(i) { const el = this.chapterEl(i); if (!el) return; const st = this.ch(el); if (st.held != null) return this.approve(i); st.play = !st.play; }
+  toggle(i) { const el = this.chapterEl(i); if (!el) return; const st = this.ch(el); if (st.held != null) return this.approve(i); const v = el.querySelector('[data-vid]'); if (v) { if (v.paused) v.play().catch(() => {}); else v.pause(); return; } st.play = !st.play; }
+  mute(i) { const el = this.chapterEl(i), v = el && el.querySelector('[data-vid]'); if (v) v.muted = !v.muted; }
+  full(i) { const el = this.chapterEl(i), fr = el && el.querySelector('[data-frame]'); if (!fr) return; if (document.fullscreenElement) document.exitFullscreen(); else if (fr.requestFullscreen) fr.requestFullscreen(); }
+  wake(i) { const el = this.chapterEl(i); if (el) this.ch(el).wake = performance.now(); }
   scrub(i, e) { const el = this.chapterEl(i); if (!el || !e || e.target.closest('[data-node]')) return; const tr = el.querySelector('[data-track]'), r = tr.getBoundingClientRect();
     this.seekTo(i, Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * (+el.dataset.dur || 60)); }
   jumpChapter(i) { const el = this.chapterEl(i); if (!el) return; const box = el.querySelector('[data-vid]') ? el.querySelector('[data-vid]').parentElement : el.querySelector('[data-track]').previousElementSibling;
@@ -520,7 +638,7 @@ class Component extends DCLogic {
       .map(([id, n, label]) => ({ n, label, text: this.state.narrow ? label : n + ' ' + label, on: tab === id, off: tab !== id, go: () => this.go(id) }));
     const vids = [P.video1, P.video2, P.video3, P.video4];
     const fmt = t => Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0');
-    const pat = ['D', 'A', 'B', 'B', 'A', 'A', 'B', 'B', 'A', 'D'].map(k => ({ k, bg: k === 'A' ? 'rgb(192 150 95)' : k === 'B' ? '#e6d9d3' : '#46293c', fg: k === 'D' ? '#ab98a0' : '#1C0F18' }));
+    const pat = ['D', 'A', 'B', 'B', 'A', 'A', 'B', 'B', 'A', 'D'].map(k => ({ k, bg: k === 'A' ? 'rgb(192 150 95)' : k === 'B' ? '#e6d9d3' : '#46293c', fg: k === 'D' ? '#ab98a0' : '#08040A' }));
     const raw = [
       { short: 'Spec fix', tool: 'Virtuoso · Eldo', dur: 95, title: 'Old schematic, new spec', summary: 'The agent opens an existing schematic, checks it against a new spec in Eldo, tells you what fails and proposes fixes. You pick one; it applies it and proves it with a re-run.',
         steps: [
@@ -551,8 +669,13 @@ class Component extends DCLogic {
           { t: 20, short: 'Waveforms', title: 'Post-layout waveforms', body: 'Eldo re-runs on the extracted netlist; the waveforms show pre- and post-layout behaviour side by side.' }
         ] }
     ];
-    const demos = raw.map((d, i) => ({ ...d, n: '0' + (i + 1), src: vids[i] || '', noSrc: !vids[i], slot: 'drop video · demo 0' + (i + 1),
-      dur: d.dur, jump: () => this.jumpChapter(i), approve: () => this.approve(i), toggle: () => this.toggle(i), scrub: (e) => this.scrub(i, e),
+    const di = this.state.demo || 0;
+    const demos = raw.map((d, i) => ({ ...d, n: '0' + (i + 1), idx: i, active: i === di, pick: () => this.pick(i), durTxt: fmt(d.dur),
+      gateTxt: (g => g ? g + (g > 1 ? ' gates' : ' gate') : 'no gate')(d.steps.filter(s => s.gate).length),
+      logSide: i === di && !this.state.stack, logInline: !!this.state.stack,
+      segs: raw.map((_, k) => ({ bg: k === i ? 'rgb(192 150 95)' : k < i ? '#8f7a85' : '#37222f' })),
+      cardBg: i === di ? 'linear-gradient(135deg,rgba(24,40,74,.75),rgba(99,17,25,.55))' : '#110910', cardBorder: i === di ? '#8f7a85' : '#37222f', numColor: i === di ? 'rgb(192 150 95)' : '#8f7a85', src: vids[i] || '', noSrc: !vids[i], slot: 'drop video · demo 0' + (i + 1),
+      dur: d.dur, jump: () => this.jumpChapter(i), approve: () => this.approve(i), toggle: () => this.toggle(i), mute: () => this.mute(i), full: () => this.full(i), wake: () => this.wake(i), scrub: (e) => this.scrub(i, e),
       steps: d.steps.map((s, j) => ({ id: i + '-' + j, short: s.short || s.title, pos: (s.t / d.dur * 100) + '%', lblL: j === 0 ? '-6px' : '-50px', lblA: j === 0 ? 'left' : 'center', seek: (e) => { if (e) e.stopPropagation(); this.seekTo(i, s.t); }, num: (i + 1) + '.' + (j + 1), t: s.t, ts: fmt(s.t), title: s.title, body: s.body,
         gate: !!s.gate, plain: !s.gate, part: s.part || '', ask: s.ask || '',
         specs: s.specs ? s.specs.map(([k, ok]) => ({ k, ok, bad: !ok })) : null,
@@ -563,7 +686,7 @@ class Component extends DCLogic {
       heroTextW: this.state.narrow ? '100%' : '46%', heroSceneW: this.state.narrow ? '100%' : '52%', heroSceneOp: 1,
       ...(n => ({ heroDir: n ? 'column' : 'row', heroJustify: n ? 'center' : 'flex-start', heroAlign: n ? 'stretch' : 'center', heroGap: n ? 'min(16px,1.8vh)' : '0px', heroTextDisp: n ? 'contents' : 'flex',
         scPos: n ? 'relative' : 'absolute', scOrder: n ? -1 : 0, scH: n ? 'min(56vw,30vh,420px)' : 'auto', heroPMax: n ? '640px' : '520px', showHeroP: !this.state.tiny, heroPMin: this.state.short ? '0' : '4.8em', scR: n ? 'auto' : 'clamp(20px,4vw,48px)', scT: n ? 'auto' : '70px', scB: n ? 'auto' : '10px' }))(this.state.narrow), panelDir: this.state.narrow ? 'column' : 'row',
-      spot: this.spot, intro: this.intro, h1: this.h1, termSec: this.termSec, showIntro: this.state.showIntro, dragStart: this.dragStart,
+      navPill: this.navPill, spot: this.spot, intro: this.intro, h1: this.h1, termSec: this.termSec, showIntro: this.state.showIntro, dragStart: this.dragStart,
       ...(() => { const A = {
         recruiter: { label: 'recruiter', p: 'I build AI agents that operate real EDA tools end to end. SiliCAD is the proof: an agent stack that takes analog circuits from spec to a DRC-clean layout on a real 65nm PDK.',
           head: 'An engineer who ships agents that run real chip tools.', pts: ['Built every layer — MCP servers, the EDA daemon, a hot-reload plugin host and an agent-to-agent bridge — in Python.', 'Fluent in the tools: Virtuoso SKILL, Eldo, Calibre, plus STA and verification work at Silimate (YC S23) and Xorvis.', 'Built to run unattended: tests, session logs, and automatic recovery when a tool or pipe fails.'] },
@@ -585,8 +708,8 @@ class Component extends DCLogic {
         { text: '■ GATE 2 — simulation verified. Proceed to Layout XL?', c: '#E08A4F' },
         { text: '› yes', c: '#f1e7e2' }
       ],
-      wide: !this.state.narrow, archSpan: this.state.narrow ? '1 / -1' : 'span 2', layerCols: this.state.narrow ? 'minmax(0,1fr)' : 'minmax(0,200px) minmax(0,1fr)',
-      tabs, isVision: tab === 'vision', isDemos: tab === 'demos', isContact: tab === 'contact',
+      wide: !this.state.narrow, showName: !this.state.xs, navCols: this.state.narrow ? 'auto minmax(0,1fr)' : '1fr auto 1fr', navGap: this.state.narrow ? '0 10px' : '16px', tabsJust: this.state.narrow ? 'end' : 'center', archSpan: this.state.narrow ? '1 / -1' : 'span 2', layerCols: this.state.narrow ? 'minmax(0,1fr)' : 'minmax(0,200px) minmax(0,1fr)',
+      stageCols: this.state.stack ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(340px,400px)', sideLog: !this.state.stack, logMaxH: this.state.stack ? 'none' : 'calc(100vh - 170px)', tabs, isVision: tab === 'vision', isDemos: tab === 'demos', isContact: tab === 'contact',
       goVision: () => this.go('vision'), goDemos: () => this.go('demos'),
       toArch: () => { const a = this.archSec.current; if (a) window.scrollTo({ top: a.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' }); },
       heroSec: this.heroSec, heroScene: this.heroScene, heroWorld: this.heroWorld, heroLegend: this.heroLegend, heroCaption: this.heroCaption, heroHint: this.heroHint,
