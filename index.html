@@ -253,7 +253,7 @@
 <div data-pp onClick="{{ dm.toggle }}" style="flex:none;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(241,231,226,.08);color:rgb(192 150 95);font-size:10px;cursor:pointer;transition:transform .5s cubic-bezier(.34,1.9,.5,1),background .2s" style-hover="background:rgba(241,231,226,.14);transform:translateY(1px) scale(.94)" style-active="transform:translateY(2px) scale(.88);transition:transform .08s ease">▶</div>
 <span data-vtime style="white-space:nowrap">0:00</span>
 <div style="flex:1"></div>
-<sc-if value="{{ dm.src }}"><div data-mute onClick="{{ dm.mute }}" style="padding:7px 12px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:transform .5s cubic-bezier(.34,1.9,.5,1),background .2s" style-hover="background:rgba(241,231,226,.14);transform:translateY(1px) scale(.94)" style-active="transform:translateY(2px) scale(.88);transition:transform .08s ease">Sound off</div></sc-if>
+<sc-if value="{{ dm.sound }}"><div data-mute onClick="{{ dm.mute }}" style="padding:7px 12px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:transform .5s cubic-bezier(.34,1.9,.5,1),background .2s" style-hover="background:rgba(241,231,226,.14);transform:translateY(1px) scale(.94)" style-active="transform:translateY(2px) scale(.88);transition:transform .08s ease">Sound off</div></sc-if>
 <div onClick="{{ dm.full }}" style="flex:none;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;transition:transform .5s cubic-bezier(.34,1.9,.5,1),background .2s" style-hover="background:rgba(241,231,226,.14);transform:translateY(1px) scale(.94)" style-active="transform:translateY(2px) scale(.88);transition:transform .08s ease">⤢</div>
 </div>
 </div>
@@ -585,7 +585,7 @@ class Component extends DCLogic {
         if (fill) fill.style.width = pct + '%'; if (tok) tok.style.left = pct + '%';
         nodes.forEach((nd, k) => { const done = t >= +nd.dataset.t, d = nd.querySelector('[data-dot]'), l = nd.querySelector('[data-lbl]'), f = nd.querySelector('[data-flap]');
           if (d) { d.style.background = done ? CU : '#08040A'; d.style.borderColor = done ? CU : '#8f7a85'; }
-          if (l) { l.style.color = k === cur ? '#f1e7e2' : '#8f7a85'; l.style.opacity = trW < 560 && k !== cur ? 0 : 1; l.style.transition = 'opacity .3s'; }
+          if (l) { l.style.color = k === cur ? '#f1e7e2' : '#8f7a85'; l.style.opacity = trW < 720 && k !== cur ? 0 : 1; l.style.transition = 'opacity .3s'; }
           if (f) { const open = st.passed.has(k), held = st.held === k;
             f.style.transform = open ? 'rotateX(-80deg)' : 'rotateX(0deg)';
             f.style.background = open ? '#C05C1F' : held ? (Math.sin(T * 6) > 0 ? '#C05C1F' : '#f1e7e2') : '#8f7a85';
@@ -636,17 +636,19 @@ class Component extends DCLogic {
     const tab = this.state.tab, P = this.props;
     const tabs = [['vision', '01', 'Vision'], ['demos', '02', 'Demos'], ['contact', '03', 'Contact']]
       .map(([id, n, label]) => ({ n, label, text: this.state.narrow ? label : n + ' ' + label, on: tab === id, off: tab !== id, go: () => this.go(id) }));
-    const vids = [P.video1, P.video2, P.video3, P.video4];
+    const vids = [P.video1 || 'assets/demo/demo01_spec_fix_edited_22MB.mp4', P.video2, P.video3, P.video4];
     const fmt = t => Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0');
     const pat = ['D', 'A', 'B', 'B', 'A', 'A', 'B', 'B', 'A', 'D'].map(k => ({ k, bg: k === 'A' ? 'rgb(192 150 95)' : k === 'B' ? '#e6d9d3' : '#46293c', fg: k === 'D' ? '#ab98a0' : '#08040A' }));
     const raw = [
-      { short: 'Spec fix', tool: 'Virtuoso · Eldo', dur: 95, title: 'Old schematic, new spec', summary: 'The agent opens an existing schematic, checks it against a new spec in Eldo, tells you what fails and proposes fixes. You pick one; it applies it and proves it with a re-run.',
+      { short: 'Spec fix', tool: 'Virtuoso · Eldo', dur: 95, audio: false, title: 'Old schematic, new spec', summary: 'The agent opens an existing two-stage op-amp, proves it meets spec, then finds it breaks at a new 0.2 V input. You pick the fix; it edits the schematic and re-simulates until every spec passes.',
         steps: [
-          { t: 0, short: 'Open', title: 'Open the existing schematic', body: 'The agent opens a legacy op-amp in Virtuoso, reads its devices and sizing, and exports the netlist.' },
-          { t: 15, short: 'New spec', title: 'Hand it the new spec', body: 'You give it new targets — gain, bandwidth, phase margin, power.' },
-          { t: 30, short: 'Eldo check', title: 'Check every spec in Eldo', body: 'Eldo runs .OP, .AC, .TRAN and .NOISE, and the agent compares each result with the new targets.', specs: [['DC gain', false], ['UGBW', true], ['Phase margin', false], ['Power', true]] },
-          { t: 55, gate: true, short: 'Pick fix', title: 'The agent asks: which fix?', body: 'It explains why each failing spec misses and proposes changes on top of the original schematic.', ask: 'Gain and phase margin miss. Pick a fix:', opts: ['A · Raise input-pair M to lift gm', 'B · Cascode the load for more gain', 'C · Resize Cc to recover phase margin'], pick: 1 },
-          { t: 75, short: 'Re-sim', title: 'Apply and re-simulate', body: 'The agent edits the schematic, re-runs Eldo, and every spec passes.', specs: [['DC gain', true], ['UGBW', true], ['Phase margin', true], ['Power', true]] }
+          { t: 0, short: 'Open', title: 'Open the schematic and read it', body: 'Asked in plain English, the agent opens opamp2s in Virtuoso over MCP and reads its topology: an NMOS diff pair with a PMOS mirror load, a second gain stage and a Miller cap. It sorts the 9 devices into match groups (DIFF_PAIR_1, CM_LOAD_1, BIAS_MIRROR_1) for later.' },
+          { t: 19, short: 'Specs', title: 'Check every spec in Eldo', body: 'It exports the netlist and runs AC and transient decks at VCM = 0.6 V, 1.2 V supply, 20 µA bias. Everything passes with 0 errors; phase margin and UGBW have the least headroom.', specs: [['DC gain · 53.6 dB', true], ['UGBW · 49.8 MHz', true], ['Phase margin · 62°', true], ['Slew · 33 / 27 V/µs', true], ['Power · 0.38 mW', true], ['Sat. margin · +210 mV', true]] },
+          { t: 33, short: '0.2 V', title: 'New spec: a 0.2 V sensor input', body: 'You ask whether it still works when a sensor front-end biases the input at 0.2 V. The agent checks the operating point: the tail transistor M5 drops into triode and starves the input pair.', specs: [['DC gain · 49.3 dB', true], ['UGBW · 10.4 MHz', false], ['Slew fall · 5.6 V/µs', false], ['Sat. margin (M5)', false]] },
+          { t: 43, gate: true, short: 'Pick fix', title: 'The agent asks: fix the input range how?', body: 'The NMOS pair only meets spec between about 0.45 V and 0.9 V. The agent lays out three ways to widen the common-mode range and waits for your call.', ask: 'Fix the input range how?', opts: ['PMOS input pair · same device count (recommended)', 'Rail-to-rail · both pairs, more devices', 'Level-shift the input · costs headroom'], pick: 0 },
+          { t: 54, gate: true, short: 'Go ahead', title: 'Approve the edit, watch it land', body: 'Before touching the cell it shows a four-step plan: mirror the drawing, swap device types one match group at a time, swap VDD and VSS, and double the pair units for PMOS mobility. Instance names, match groups and W/L stay. Once you say go ahead, each step lands live in Virtuoso and a fresh schematic check comes back clean.', errs: [['schCheck', '0 errors', true], ['Warnings', '0', true]] },
+          { t: 70, short: 'Re-sim', title: 'Re-simulate at 0.2 V', body: 'With the PMOS input pair the tail is back in saturation and every spec passes at 0.2 V. A VCM sweep shows the working range moved from about 0.45–0.9 V to 0.2–0.8 V.', specs: [['DC gain · 42.6 dB', true], ['UGBW · 50.1 MHz', true], ['Phase margin · 70.3°', true], ['Slew · 30.8 / 32.7 V/µs', true], ['Power · 0.40 mW', true], ['Sat. margin · +75 mV', true]] },
+          { t: 86, short: 'Done', title: 'Saved, clean, and waiting', body: 'The PMOS-input opamp2s is saved and open. Noise and PVT corners are next, or on to Layout XL.' }
         ] },
       { short: 'Layout XL', tool: 'Virtuoso Layout XL', dur: 105, title: 'Floorplan, then routing', summary: 'Part one plans the floor from the matching constraints and waits for your check. Part two routes it.',
         steps: [
@@ -674,7 +676,7 @@ class Component extends DCLogic {
       gateTxt: (g => g ? g + (g > 1 ? ' gates' : ' gate') : 'no gate')(d.steps.filter(s => s.gate).length),
       logSide: i === di && !this.state.stack, logInline: !!this.state.stack,
       segs: raw.map((_, k) => ({ bg: k === i ? 'rgb(192 150 95)' : k < i ? '#8f7a85' : '#37222f' })),
-      cardBg: i === di ? 'linear-gradient(135deg,rgba(24,40,74,.75),rgba(99,17,25,.55))' : '#110910', cardBorder: i === di ? '#8f7a85' : '#37222f', numColor: i === di ? 'rgb(192 150 95)' : '#8f7a85', src: vids[i] || '', noSrc: !vids[i], slot: 'drop video · demo 0' + (i + 1),
+      cardBg: i === di ? 'linear-gradient(135deg,rgba(24,40,74,.75),rgba(99,17,25,.55))' : '#110910', cardBorder: i === di ? '#8f7a85' : '#37222f', numColor: i === di ? 'rgb(192 150 95)' : '#8f7a85', src: vids[i] || '', noSrc: !vids[i], sound: !!vids[i] && d.audio !== false, slot: 'drop video · demo 0' + (i + 1),
       dur: d.dur, jump: () => this.jumpChapter(i), approve: () => this.approve(i), toggle: () => this.toggle(i), mute: () => this.mute(i), full: () => this.full(i), wake: () => this.wake(i), scrub: (e) => this.scrub(i, e),
       steps: d.steps.map((s, j) => ({ id: i + '-' + j, short: s.short || s.title, pos: (s.t / d.dur * 100) + '%', lblL: j === 0 ? '-6px' : '-50px', lblA: j === 0 ? 'left' : 'center', seek: (e) => { if (e) e.stopPropagation(); this.seekTo(i, s.t); }, num: (i + 1) + '.' + (j + 1), t: s.t, ts: fmt(s.t), title: s.title, body: s.body,
         gate: !!s.gate, plain: !s.gate, part: s.part || '', ask: s.ask || '',
