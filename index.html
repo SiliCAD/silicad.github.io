@@ -309,7 +309,7 @@
 <div style="display:flex;gap:4px;padding:10px;border:1px solid #37222f;border-radius:10px;background:#150b13">
 <sc-for list="{{ s.pattern }}" as="f"><div style="flex:1;height:40px;border-radius:3px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font:600 10px 'IBM Plex Mono',monospace;background:{{ f.bg }};color:{{ f.fg }}">{{ f.k }}</div></sc-for>
 </div>
-<div style="font:400 11px 'IBM Plex Mono',monospace;color:#8f7a85">DIFF pair · common-centroid · dummies · guard ring</div>
+<div style="font:400 11px 'IBM Plex Mono',monospace;color:#8f7a85">{{ s.patCap }}</div>
 </div>
 </sc-if>
 <sc-if value="{{ s.errs }}">
@@ -374,7 +374,7 @@
 <div style="display:flex;gap:4px;padding:10px;border:1px solid #37222f;border-radius:10px;background:#150b13">
 <sc-for list="{{ s.pattern }}" as="f"><div style="flex:1;height:40px;border-radius:3px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font:600 10px 'IBM Plex Mono',monospace;background:{{ f.bg }};color:{{ f.fg }}">{{ f.k }}</div></sc-for>
 </div>
-<div style="font:400 11px 'IBM Plex Mono',monospace;color:#8f7a85">DIFF pair · common-centroid · dummies · guard ring</div>
+<div style="font:400 11px 'IBM Plex Mono',monospace;color:#8f7a85">{{ s.patCap }}</div>
 </div>
 </sc-if>
 <sc-if value="{{ s.errs }}">
@@ -647,7 +647,7 @@ class Component extends DCLogic {
     const tab = this.state.tab, P = this.props;
     const tabs = [['vision', '01', 'Vision'], ['demos', '02', 'Demos'], ['contact', '03', 'Contact']]
       .map(([id, n, label]) => ({ n, label, text: this.state.narrow ? label : n + ' ' + label, on: tab === id, off: tab !== id, go: () => this.go(id) }));
-    const vids = [P.video1 || 'assets/demo/demo01_spec_fix_edited_22MB.mp4', P.video2, P.video3, P.video4].map(v => { v = (v || '').trim(); return /^(https?:|blob:|data:video|\.{0,2}\/)|\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(v) ? v : ''; });
+    const vids = [P.video1 || 'assets/demo/demo01_spec_fix_edited_22MB.mp4', P.video2 || 'assets/demo/demo2_floorplan.mp4', P.video3, P.video4].map(v => { v = (v || '').trim(); return /^(https?:|blob:|data:video|\.{0,2}\/)|\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(v) ? v : ''; });
     const fmt = t => Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0');
     const pat = ['D', 'A', 'B', 'B', 'A', 'A', 'B', 'B', 'A', 'D'].map(k => ({ k, bg: k === 'A' ? 'rgb(192 150 95)' : k === 'B' ? '#e6d9d3' : '#46293c', fg: k === 'D' ? '#ab98a0' : '#08040A' }));
     const raw = [
@@ -661,13 +661,16 @@ class Component extends DCLogic {
           { t: 70, short: 'Re-sim', title: 'Re-simulate at 0.2 V', body: 'With the PMOS input pair the tail is back in saturation and every spec passes at 0.2 V. A VCM sweep shows the working range moved from about 0.45–0.9 V to 0.2–0.8 V.', specs: [['DC gain · 42.6 dB', true], ['UGBW · 50.1 MHz', true], ['Phase margin · 70.3°', true], ['Slew · 30.8 / 32.7 V/µs', true], ['Power · 0.40 mW', true], ['Sat. margin · +75 mV', true]] },
           { t: 86, short: 'Done', title: 'Saved, clean, and waiting', body: 'The PMOS-input opamp2s is saved and open. Noise and PVT corners are next, or on to Layout XL.' }
         ] },
-      { short: 'Layout XL', tool: 'Virtuoso Layout XL', dur: 105, title: 'Floorplan, then routing', summary: 'Part one plans the floor from the matching constraints and waits for your check. Part two routes it.',
+      { short: 'Floorplan', tool: 'Virtuoso Layout XL', dur: 89, audio: false, title: 'Floorplan, then pre-routing', summary: 'Starting from the schematic in Demo 01, the agent plans a matched floorplan and waits for your approval. Then it places every device in Layout XL, adds straps, gate trunks and guard rings, and stops before signal routing.',
         steps: [
-          { t: 0, part: 'Part 1 · floorplan', short: 'Match', title: 'Find the matched devices', body: 'Reads the matching groups from the schematic: the differential pair, the current-mirror load, the tail source.' },
-          { t: 20, part: 'Part 1 · floorplan', short: 'Place', title: 'Place by pattern', body: 'Each group gets a common-centroid or interdigitated pattern, with dummy fingers and guard rings. The agent shows why the pattern balances.', pattern: true },
-          { t: 45, gate: true, part: 'Part 1 · floorplan', short: 'Verify', title: 'You verify the floorplan', body: 'The agent pauses with the placement on screen. Adjust it, or approve.' },
-          { t: 60, part: 'Part 2 · routing', short: 'Route', title: 'Route the blocks', body: 'Symmetric routing along the differential axis, with multi-cut vias on high-current paths.' },
-          { t: 85, part: 'Part 2 · routing', short: 'LVS', title: 'Check against the schematic', body: 'Layout vs. schematic comes back with zero mismatches.' }
+          { t: 0, part: 'Part 1 · floorplan', short: 'Ask', title: 'Ask for a floorplan', body: 'One line: floorplan and lay out the schematic that is open in Virtuoso. It is opamp2s, the PMOS-input op-amp fixed in Demo 01.' },
+          { t: 14, part: 'Part 1 · floorplan', short: 'Read', title: 'Read the matched groups', body: 'The cell has no layout view yet, so the agent starts from scratch. It finds three matched groups: DP1, the PMOS input pair; LD1, the NMOS mirror load; and CM2, the PMOS bias mirror. M6, the stage-2 driver, stays on its own.' },
+          { t: 23, part: 'Part 1 · floorplan', short: 'Patterns', title: 'Propose a pattern for each block', body: 'Each block gets a common-centroid grid with dummies at the edges. The input pair is 2 × 6, the bias bank 5 × 8, the active load 2 × 4 and the output driver 2 × 2, with the Miller cap as a 4 × 1 column. In every grid, the matched devices share the array centre.', pattern: 'DABABD', patCap: 'Input pair · row 1 of 2 · A = M1, B = M2, D = dummy' },
+          { t: 35, gate: true, part: 'Part 1 · floorplan', short: 'Approve', title: 'Approve the floorplan', body: 'The global plan puts the matched core (load, pair, bias) on one centre line on the left. M6 and the cap column go on the right, since M6 connects to both cap terminals. It comes to about 35 × 36 µm. The 10 dummies exist only in the layout, so LVS is told to ignore them. Nothing is placed until you approve.' },
+          { t: 44, part: 'Part 1 · floorplan', short: 'Place', title: 'Dry-run, then place', body: 'A dry run finds that the 1.9 µm gap between the bias bank and M6 is too tight for a guard ring. The agent moves M6 to its own row, turns guard rings on for every block and re-plans with 4.4 µm channels. It then places all 54 units plus 10 dummies in Layout XL.' },
+          { t: 54, part: 'Part 1 · floorplan', short: 'Layout XL', title: 'The floorplan in Layout XL', body: 'All 64 units sit on the centre line at X = 8.68 µm. The cap column is next to the core. The agent fits the PR boundary, saves the layout and adds the N-well and implants.', errs: [['Units placed', '64 / 64', true], ['PR boundary', '35.3 × 38.6 µm', true]] },
+          { t: 66, part: 'Part 2 · pre-routing', short: 'Pre-route', title: 'Straps, trunks and guard rings', body: 'Asked whether to start routing, you say route it. The agent adds 112 column-strap shapes (76 poly bridges, 36 M1 straps) and shorts each dummy locally. It then adds 84 gate contacts, 10 M2 trunks for IBIAS, VINP, VINN, net1 and net8, and a closed guard ring around each block.' },
+          { t: 76, gate: true, part: 'Part 2 · pre-routing', short: 'Stop?', title: 'Pre-routing done: stop here?', body: 'The layout is saved. LVS still reports 357 open markers, which is expected because dummy ties, pins and the signal routing between blocks are not done yet. The agent recommends stopping here so you can review before the auto-router and Calibre DRC run.', ask: 'Pre-routing done. Stop here?', opts: ['Stop here · keep the current layout (recommended)', 'Continue routing · ties, pins, signals', 'Type something'], pick: 0 }
         ] },
       { short: 'DRC / LVS', tool: 'Calibre · Virtuoso GUI', dur: 90, title: 'Fixing DRC and LVS, live', summary: 'The agent counts what fails, then fixes each error in the Virtuoso window while you watch.',
         steps: [
@@ -693,7 +696,7 @@ class Component extends DCLogic {
         gate: !!s.gate, plain: !s.gate, part: s.part || '', ask: s.ask || '',
         specs: s.specs ? s.specs.map(([k, ok]) => ({ k, ok, bad: !ok })) : null,
         opts: s.opts ? s.opts.map((label, m) => ({ label, chosen: m === s.pick, other: m !== s.pick })) : null,
-        pattern: s.pattern ? pat : null,
+        pattern: s.pattern ? (typeof s.pattern === 'string' ? s.pattern.split('').map(k => pat.find(f => f.k === k)) : pat) : null, patCap: s.patCap || 'DIFF pair · common-centroid · dummies · guard ring',
         errs: s.errs ? s.errs.map(([k, v, ok]) => ({ k, v, ok, bad: !ok })) : null })) }));
     return {
       heroTextW: this.state.narrow ? '100%' : '46%', heroSceneW: this.state.narrow ? '100%' : '52%', heroSceneOp: 1,
