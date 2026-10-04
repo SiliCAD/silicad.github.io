@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SiliCAD — Spec to Silicon</title>
-<meta name="description" content="SiliCAD — AI agents that take analog circuits from spec to a DRC-clean layout on real EDA tools. By Vaibhav Singh."><meta name="theme-color" content="#08040A"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><meta property="og:type" content="website"><meta property="og:site_name" content="SiliCAD"><meta property="og:title" content="SiliCAD — Spec to Silicon"><meta property="og:description" content="AI agents for analog chip design, directed by the engineer. Vaibhav Singh."><meta property="og:url" content="https://silicad.github.io/"><meta property="og:image" content="https://silicad.github.io/assets/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="SiliCAD — Spec to Silicon"><meta name="twitter:description" content="AI agents for analog chip design, directed by the engineer."><meta name="twitter:image" content="https://silicad.github.io/assets/og-image.png">
+<meta name="description" content="SiliCAD — AI agents that take analog circuits from spec to a DRC-clean layout on real EDA tools. By Vaibhav Singh."><meta name="theme-color" content="#08040A"><link rel="icon" type="image/svg+xml" href="assets/silicad-logo.svg?v=2"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2"><link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=2"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2"><meta property="og:type" content="website"><meta property="og:site_name" content="SiliCAD"><meta property="og:title" content="SiliCAD — Spec to Silicon"><meta property="og:description" content="AI agents for analog chip design, directed by the engineer. Vaibhav Singh."><meta property="og:url" content="https://silicad.github.io/"><meta property="og:image" content="https://silicad.github.io/assets/og-image.png?v=2"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="SiliCAD — Spec to Silicon"><meta name="twitter:description" content="AI agents for analog chip design, directed by the engineer."><meta name="twitter:image" content="https://silicad.github.io/assets/og-image.png?v=2">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -16,16 +16,16 @@
 <sc-if value="{{ showIntro }}">
 <div ref="{{ intro }}" style="position:fixed;inset:0;z-index:100;background:#08040A;display:flex;flex-direction:column;gap:40px;align-items:center;justify-content:center;perspective:900px;pointer-events:none">
 <div data-iw style="position:relative;width:150px;height:150px;transform-style:preserve-3d">
-<img data-il src="assets/silicad-logo.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain">
-<img data-il src="assets/silicad-logo.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0">
-<img data-il src="assets/silicad-logo.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0">
+<img data-il src="assets/silicad-logo.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain">
+<img data-il src="assets/silicad-logo.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0">
+<img data-il src="assets/silicad-logo.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0">
 </div>
 <div data-it style="font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.34em;color:rgb(192 150 95);opacity:0">SPEC → SILICON</div>
 </div>
 </sc-if>
 
 <div style="position:fixed;top:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:{{ navCols }};align-items:center;gap:{{ navGap }};padding:14px clamp(14px,4vw,48px);background:rgba(8,4,10,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #231520">
-<div onClick="{{ goVision }}" style="justify-self:start;display:flex;align-items:center;gap:10px;white-space:nowrap;font:500 clamp(13px,3.8vw,15px) 'IBM Plex Mono',monospace;letter-spacing:.02em;cursor:pointer"><img src="assets/silicad-logo.png" alt="SiliCAD" style="width:30px;height:30px;object-fit:contain;display:block"><sc-if value="{{ showName }}" hint-placeholder-val="{{ true }}"><span>SiliCAD</span></sc-if></div>
+<div onClick="{{ goVision }}" style="justify-self:start;display:flex;align-items:center;gap:10px;white-space:nowrap;font:500 clamp(13px,3.8vw,15px) 'IBM Plex Mono',monospace;letter-spacing:.02em;cursor:pointer"><img src="assets/silicad-logo.svg" alt="SiliCAD" style="width:30px;height:30px;object-fit:contain;display:block"><sc-if value="{{ showName }}" hint-placeholder-val="{{ true }}"><span>SiliCAD</span></sc-if></div>
 <div style="position:relative;justify-self:{{ tabsJust }};display:flex;gap:4px;padding:4px;border:1px solid #37222f;border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,240,230,.07);font:500 clamp(12px,3.2vw,13px) 'IBM Plex Mono',monospace">
 <div ref="{{ navPill }}" style="position:absolute;top:4px;bottom:4px;left:4px;width:0;border-radius:999px;background:rgba(241,231,226,.09);box-shadow:inset 0 0 0 1px rgba(241,231,226,.14),0 0 18px rgb(192 150 95 / .18);transition:left .55s cubic-bezier(.34,1.35,.5,1),width .55s cubic-bezier(.34,1.35,.5,1);pointer-events:none"></div>
 <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="3">
