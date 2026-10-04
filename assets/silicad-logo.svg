@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 14 72 72" role="img" aria-label="SiliCAD">
+<title>SiliCAD</title>
+<defs>
+<clipPath id="sb"><path d="M0 0H97.74L0 97.74Z"/></clipPath>
+<clipPath id="sw"><path d="M100 2.26V100H2.26Z"/></clipPath>
+<radialGradient id="sg" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F3DA97"/><stop offset=".8" stop-color="#E9C979"/><stop offset="1" stop-color="#D2AC5E"/></radialGradient>
+</defs>
+<g clip-path="url(#sb)">
+<circle cx="50" cy="50" r="34" fill="url(#sg)"/>
+<path d="M50 50L26.25 69.93M50 50L22.38 64.07M50 50L19.92 57.50M50 50L19.00 50.54M50 50L19.68 43.55M50 50L21.90 36.90M50 50L25.57 30.91M50 50L30.49 25.91M50 50L36.41 22.14M50 50L43.03 19.79M50 50L50.00 19.00M50 50L56.97 19.79M50 50L63.59 22.14M50 50L69.51 25.91" stroke="#D4AE62" stroke-width=".8" opacity=".8"/>
+<circle cx="50" cy="50" r="13" fill="none" stroke="#CFA759" stroke-width="1.2"/>
+<g fill="#6b4426"><circle cx="50" cy="40.5" r="2.6"/><circle cx="41.8" cy="45.3" r="2.6"/><circle cx="41.8" cy="54.7" r="2.6"/></g>
+</g>
+<g clip-path="url(#sw)">
+<circle cx="50" cy="50" r="33" fill="#1a0f17" stroke="#C0965F" stroke-width="2"/>
+<g fill="#C0965F"><rect x="67.13" y="37.13" width="2.74" height="2.74" rx="1.12"/><rect x="72.60" y="36.60" width="3.80" height="3.80" rx="0.78"/><rect x="61.13" y="43.13" width="2.74" height="2.74" rx="1.12"/><rect x="66.60" y="42.60" width="3.80" height="3.80" rx="0.78"/><rect x="72.07" y="42.07" width="4.86" height="4.86" rx="0.45"/><rect x="55.13" y="49.13" width="2.74" height="2.74" rx="1.12"/><rect x="60.60" y="48.60" width="3.80" height="3.80" rx="0.78"/><rect x="66.07" y="48.07" width="4.86" height="4.86" rx="0.45"/><rect x="72.00" y="48.00" width="5.00" height="5.00" rx="0.40"/><rect x="49.13" y="55.13" width="2.74" height="2.74" rx="1.12"/><rect x="54.60" y="54.60" width="3.80" height="3.80" rx="0.78"/><rect x="60.07" y="54.07" width="4.86" height="4.86" rx="0.45"/><rect x="66.00" y="54.00" width="5.00" height="5.00" rx="0.40"/><rect x="72.00" y="54.00" width="5.00" height="5.00" rx="0.40"/><rect x="43.13" y="61.13" width="2.74" height="2.74" rx="1.12"/><rect x="48.60" y="60.60" width="3.80" height="3.80" rx="0.78"/><rect x="54.07" y="60.07" width="4.86" height="4.86" rx="0.45"/><rect x="60.00" y="60.00" width="5.00" height="5.00" rx="0.40"/><rect x="66.00" y="60.00" width="5.00" height="5.00" rx="0.40"/><rect x="72.00" y="60.00" width="5.00" height="5.00" rx="0.40"/><rect x="37.13" y="67.13" width="2.74" height="2.74" rx="1.12"/><rect x="42.60" y="66.60" width="3.80" height="3.80" rx="0.78"/><rect x="48.07" y="66.07" width="4.86" height="4.86" rx="0.45"/><rect x="54.00" y="66.00" width="5.00" height="5.00" rx="0.40"/><rect x="60.00" y="66.00" width="5.00" height="5.00" rx="0.40"/><rect x="66.00" y="66.00" width="5.00" height="5.00" rx="0.40"/><rect x="36.60" y="72.60" width="3.80" height="3.80" rx="0.78"/><rect x="42.07" y="72.07" width="4.86" height="4.86" rx="0.45"/><rect x="48.00" y="72.00" width="5.00" height="5.00" rx="0.40"/><rect x="54.00" y="72.00" width="5.00" height="5.00" rx="0.40"/><rect x="60.00" y="72.00" width="5.00" height="5.00" rx="0.40"/></g>
+</g>
+</svg>
