@@ -542,7 +542,12 @@ class Component extends DCLogic {
     const dp = this.dpBg.current;
     if (dp) {
       const W = 'WORK IT HARDER|MAKE IT BETTER|DO IT FASTER|MAKES US STRONGER|MORE THAN EVER|HOUR AFTER HOUR|WORK IS NEVER OVER'.split('|');
-      if (!dp.childElementCount) { dp.innerHTML = '<div style="position:absolute;left:50%;top:50%;width:max-content;display:flex;flex-direction:column;gap:1.2vh;transform:translate(-50%,-50%) rotate(-9deg)">' + W.map((w, k) => '<div style="display:flex;width:max-content;will-change:transform;white-space:nowrap;font:700 min(9.5vh,7.6vw)/1 \'IBM Plex Sans\',sans-serif;letter-spacing:-.03em;' + (k % 2 ? 'color:rgba(192,150,95,.16)' : 'color:transparent;-webkit-text-stroke:1px rgba(241,231,226,.2)') + '">' + (w + ' · ').repeat(6) + '</div>').join('') + '</div>'; this.dpX = W.map(() => 0); this.dpY = window.scrollY; }
+      const vw = window.innerWidth, vh = window.innerHeight, dg = Math.hypot(vw, vh), dk = Math.round(vw / 40) + 'x' + Math.round(vh / 40);
+      if (this.dpSize !== dk) { this.dpSize = dk; dp.innerHTML = ''; }
+      if (!dp.childElementCount) { const row = (w, k, n) => '<div style="display:flex;width:max-content;margin-left:' + (-(dg - vw) / 2 - dg * .2).toFixed(0) + 'px;will-change:transform;white-space:nowrap;font:700 min(9.5vh,7.6vw)/1 \'IBM Plex Sans\',sans-serif;letter-spacing:-.03em;' + (k % 2 ? 'color:rgba(192,150,95,.16)' : 'color:transparent;-webkit-text-stroke:1px rgba(241,231,226,.2)') + '">' + (w + ' · ').repeat(n) + '</div>';
+        dp.innerHTML = '<div style="position:absolute;left:0;top:50%;width:100%;display:flex;flex-direction:column;gap:1.2vh;transform:translateY(-50%) rotate(-9deg)">' + W.map((w, k) => row(w, k, 2)).join('') + '</div>';
+        const rs = dp.firstChild.children; W.forEach((w, k) => { const u = rs[k].scrollWidth / 2 || 1; rs[k].outerHTML = row(w, k, 2 * Math.ceil(dg * 1.5 / u)); });
+        this.dpX = W.map(() => 0); this.dpY = window.scrollY; }
       const rm = this.rm ?? (this.rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches);
       const dy = window.scrollY - this.dpY; this.dpY = window.scrollY; this.dpV = (this.dpV || 0) * .9 + Math.min(60, Math.abs(dy)) * .1;
       const dt = Math.min(.05, (now - (this.dpT || now)) / 1000); this.dpT = now;
